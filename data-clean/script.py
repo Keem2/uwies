@@ -18,7 +18,7 @@ exam_data["hours"] = exam_data["hours"].str.replace('HRS', 'hours')
     
 
 # Appending cleaned file to examlist_clean.csv
-exam_data.to_csv('./data/examlist_clean.csv', mode='a', index=False)
+exam_data.to_csv('./data-clean/examlist_clean.csv', mode='a', index=False)
 
 # Converting cleaned file to json
-json.dumps(json.loads(exam_data.to_json('./data/examlist_clean.json', orient='records')))
+json.dumps(json.loads(exam_data.to_json('./data-clean/examlist_clean.json', orient='records')))
