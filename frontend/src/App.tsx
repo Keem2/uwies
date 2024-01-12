@@ -13,7 +13,7 @@ const App = () => {
             <Heading semester={"II"} semesterYear={"2023-2024"} />
          </div>
 
-         <div className="flex justify-around gap-x-6 mt-10 sm:justify-center lg:ml-10">
+         <div className="flex justify-around gap-x-6 mt-10 sm:justify-center md:ml-10">
             <LinkButton title={"Create your schedule"} svgSrc={AddIcon} />
 
             <LinkButton title={"View saved schedule"} svgSrc={BookmarkIcon} />
