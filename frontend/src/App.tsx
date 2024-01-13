@@ -6,10 +6,10 @@ import AddIcon from "./assets/add.svg";
 
 const App = () => {
    return (
-      <div className="mx-7 mt-5 body-color font-body-font">
+      <div className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen">
          <Navbar />
 
-         <div className="text-center">
+         <div className="text-center dark:text-white">
             <Heading semester={"II"} semesterYear={"2023-2024"} />
          </div>
 

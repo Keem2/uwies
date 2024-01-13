@@ -1,11 +1,10 @@
+import ThemeSwitcher from "./ui/themeswitcher";
 const Navbar = () => {
-  return (
-    <div className="flex justify-end">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-    </div>
-  )
-}
+   return (
+      <div className="flex justify-end pt-6 text-black dark:text-white">
+         <ThemeSwitcher />
+      </div>
+   );
+};
 
-export default Navbar
+export default Navbar;

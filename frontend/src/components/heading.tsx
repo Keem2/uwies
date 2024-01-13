@@ -5,7 +5,7 @@ type Props = {
 
 const Heading = ({ semester, semesterYear }: Props) => {
    return (
-      <h1 className="text-2xl md:text-3xl font-bold mt-10 md:ml-8">
+      <h1 className="text-2xl md:text-3xl font-bold mt-14 md:ml-8 ">
          UWI Cave Hill Exam Scheduler <br /> <br /> Semester {semester}{" "}
          {semesterYear}
       </h1>
