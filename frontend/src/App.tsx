@@ -3,6 +3,8 @@ import Heading from "./components/heading";
 import LinkButton from "./components/ui/linkbutton";
 import BookmarkIcon from "./assets/bookmark.svg";
 import AddIcon from "./assets/add.svg";
+import Divider from "./components/ui/divider";
+import SubmitButton from "./components/form/submitbutton";
 
 const App = () => {
    return (
@@ -17,6 +19,15 @@ const App = () => {
             <LinkButton title={"Create your schedule"} svgSrc={AddIcon} />
 
             <LinkButton title={"View saved schedule"} svgSrc={BookmarkIcon} />
+         </div>
+
+         <h2 className="text-2xl md:text-3xl font-bold mt-14 md:ml-8 dark:text-white">
+            Exam Timetable
+         </h2>
+
+         <div className="md:ml-8">
+            <Divider />
+            <SubmitButton />
          </div>
       </div>
    );

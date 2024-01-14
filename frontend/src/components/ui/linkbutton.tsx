@@ -1,6 +1,6 @@
 type Props = {
    title: string;
-   svgSrc: any;
+   svgSrc: string;
 };
 
 const LinkButton = ({ title, svgSrc }: Props) => {
