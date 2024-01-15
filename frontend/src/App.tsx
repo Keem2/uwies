@@ -4,11 +4,11 @@ import LinkButton from "./components/ui/linkbutton";
 import BookmarkIcon from "./assets/bookmark.svg";
 import AddIcon from "./assets/add.svg";
 import Divider from "./components/ui/divider";
-import SubmitButton from "./components/form/submitbutton";
+import Table from "./components/table";
 
 const App = () => {
    return (
-      <div className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen">
+      <div className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
          <Navbar />
 
          <div className="text-center dark:text-white">
@@ -27,7 +27,7 @@ const App = () => {
 
          <div className="md:ml-8">
             <Divider />
-            <SubmitButton />
+            <Table />
          </div>
       </div>
    );
