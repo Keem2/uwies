@@ -1,5 +1,4 @@
 //DaisyUI table
-//heigh in div is fixed. Was having overflow issue
 import result from "../data/examlist";
 import Divider from "./ui/divider";
 import Searchbar from "./form/searchbar";
@@ -20,6 +19,7 @@ const Table = () => {
       setSearch(event.target.value);
    };
 
+   //Setting table data
    const tabledata = (
       <>
          {Object.keys(result).map((date) => {
@@ -29,8 +29,10 @@ const Table = () => {
             let filterResults = result[date].filter((exam: Exam) => {
                return search.toLowerCase() === ""
                   ? exam
-                  : exam.description.toLowerCase().includes(search) ||
-                       exam.course.toLowerCase().includes(search);
+                  : exam.description
+                       .toLowerCase()
+                       .includes(search.toLowerCase()) ||
+                       exam.course.toLowerCase().includes(search.toLowerCase());
             });
             return (
                <>
@@ -86,6 +88,7 @@ const Table = () => {
       </>
    );
 
+   //Table data returned
    return (
       <>
          <div className="w-100 mb-8">
