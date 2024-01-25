@@ -2,7 +2,8 @@
 import result from "../data/examlist";
 import Divider from "./ui/divider";
 import Searchbar from "./form/searchbar";
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import React from "react";
 
 type Exam = {
    course: string;
@@ -35,19 +36,19 @@ const Table = () => {
                        exam.course.toLowerCase().includes(search.toLowerCase());
             });
             return (
-               <>
+               <Fragment key={date}>
                   {filterResults.length > 0 && (
                      <>
                         <p
                            className={
                               "dark:text-white font-semibold text-base md:text-lg"
                            }
-                           key={date}
                         >
                            {date}
                         </p>
                         <div className="overflow-x-auto">
                            <table
+                              key={date}
                               className="table table-sm 
        md:table-md dark:text-white"
                            >
@@ -66,12 +67,24 @@ const Table = () => {
                                     (exam: Exam, index: any) => {
                                        return (
                                           <tr key={index}>
-                                             <td>{exam.course}</td>
-                                             <td>{exam.description}</td>
-                                             <td>{exam.time}</td>
-                                             <td>{exam.hours}</td>
-                                             <td>{exam.location}</td>
-                                             <td>{exam.room}</td>
+                                             <td key={exam.course}>
+                                                {exam.course}
+                                             </td>
+                                             <td key={exam.description}>
+                                                {exam.description}
+                                             </td>
+                                             <td key={exam.time}>
+                                                {exam.time}
+                                             </td>
+                                             <td key={exam.hours}>
+                                                {exam.hours}
+                                             </td>
+                                             <td key={exam.location}>
+                                                {exam.location}
+                                             </td>
+                                             <td key={exam.room}>
+                                                {exam.room}
+                                             </td>
                                           </tr>
                                        );
                                     }
@@ -82,7 +95,7 @@ const Table = () => {
                         <Divider />
                      </>
                   )}
-               </>
+               </Fragment>
             );
          })}
       </>
@@ -98,7 +111,7 @@ const Table = () => {
                value={search}
             />
          </div>
-         <section>{tabledata}</section>
+         {tabledata}
       </>
    );
 };
