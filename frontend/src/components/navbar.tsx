@@ -1,7 +1,9 @@
 import ThemeSwitcher from "./ui/themeswitcher";
+import MenuDropdown from "./ui/dropdown";
 const Navbar = () => {
    return (
-      <div className="flex justify-end pt-6 text-black dark:text-white">
+      <div className="flex justify-between pt-6 gap-10 text-black dark:text-white">
+         <MenuDropdown />
          <ThemeSwitcher />
       </div>
    );

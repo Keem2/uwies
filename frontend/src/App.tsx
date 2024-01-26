@@ -18,14 +18,14 @@ const App = () => {
          <section className="flex justify-around gap-x-6 mt-10 sm:justify-center md:ml-10">
             <LinkButton title={"Create your schedule"} svgSrc={AddIcon} />
 
-            <LinkButton title={"View saved schedule"} svgSrc={BookmarkIcon} />
+            <LinkButton title={"View saved schedules"} svgSrc={BookmarkIcon} />
          </section>
 
          <h2 className="text-2xl md:text-3xl font-bold mt-14 md:ml-8 dark:text-white">
             Exam Timetable
          </h2>
 
-         <section className="md:ml-8" key={""}>
+         <section className="md:ml-8">
             <Divider />
             <Table />
          </section>
