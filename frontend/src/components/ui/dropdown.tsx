@@ -110,7 +110,13 @@ const MenuDropdown = () => {
                   className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
                >
                   <div className="flex max-w-40 md:max-w-none">
-                     <p className="px-1.5 text-base">Hello, Akeem</p>
+                     <p className="px-1.5 text-base">
+                        Hello,{" "}
+                        {user.user_metadata.full_name.substring(
+                           0,
+                           user.user_metadata.full_name.indexOf(" ")
+                        )}
+                     </p>
                   </div>
                </div>
 
