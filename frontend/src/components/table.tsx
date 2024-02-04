@@ -1,7 +1,7 @@
 //DaisyUI table
 import result from "../data/examlist";
 import Divider from "./ui/divider";
-import Searchbar from "./form/searchbar";
+import Searchbar from "./ui/searchbar";
 import { Fragment, useState } from "react";
 import React from "react";
 

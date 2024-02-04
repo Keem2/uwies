@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../../assets/google.svg";
 import SignOutIcon from "../../assets/signout.svg";
 import UserIcon from "../../assets/user-circle.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
+import { userContext } from "../../routes/root";
 
 //supabase connection. ! is Non-null assertion operator in TS
 const supabase = createClient(
@@ -14,7 +15,7 @@ const supabase = createClient(
 
 const MenuDropdown = () => {
    //user object
-   const [user, setUser]: any = useState({});
+   const [user, setUser]: any = useContext(userContext);
 
    const navigate = useNavigate();
 
@@ -62,7 +63,46 @@ const MenuDropdown = () => {
    //if user state object is empty, show log in button. Else, show button with name
    return (
       <>
-         {Object.keys(user).length === 0 ? (
+         {Object.keys(user).length !== 0 ? (
+            <div className="dropdown dropdown- -mt-4 ">
+               <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
+               >
+                  <div className="flex max-w-40 md:max-w-none">
+                     <p className="px-1.5 text-base">
+                        Hello,{" "}
+                        {user.user_metadata.full_name.substring(
+                           0,
+                           user.user_metadata.full_name.indexOf(" ")
+                        )}
+                     </p>
+                  </div>
+               </div>
+
+               <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
+               >
+                  <li
+                     onClick={() => {
+                        handleLinkClick();
+                        signOutUser();
+                     }}
+                  >
+                     <a className="text-sm">
+                        <img
+                           src={SignOutIcon}
+                           alt="Google Icon"
+                           className="w-5 h-5 dark:invert"
+                        />
+                        Log Out
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         ) : (
             <div className="dropdown dropdown- -mt-4">
                <div
                   tabIndex={0}
@@ -98,45 +138,6 @@ const MenuDropdown = () => {
                            className="w-5 h-5"
                         />
                         Continue with Google
-                     </a>
-                  </li>
-               </ul>
-            </div>
-         ) : (
-            <div className="dropdown dropdown- -mt-4 ">
-               <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
-               >
-                  <div className="flex max-w-40 md:max-w-none">
-                     <p className="px-1.5 text-base">
-                        Hello,{" "}
-                        {user.user_metadata.full_name.substring(
-                           0,
-                           user.user_metadata.full_name.indexOf(" ")
-                        )}
-                     </p>
-                  </div>
-               </div>
-
-               <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
-               >
-                  <li
-                     onClick={() => {
-                        handleLinkClick();
-                        signOutUser();
-                     }}
-                  >
-                     <a className="text-sm">
-                        <img
-                           src={SignOutIcon}
-                           alt="Google Icon"
-                           className="w-5 h-5 dark:invert"
-                        />
-                        Sign Out
                      </a>
                   </li>
                </ul>
