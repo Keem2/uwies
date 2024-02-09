@@ -22,7 +22,7 @@ const Root = () => {
                <Heading semester={"II"} semesterYear={"2023-2024"} />
             </header>
             {Object.keys(user).length !== 0 ? (
-               <section className="flex justify-around gap-x-6 mt-10 sm:justify-center md:ml-10">
+               <section className="flex justify-center gap-x-6 mt-10">
                   <LinkButton
                      title={"Create your schedule"}
                      svgSrc={AddIcon}
@@ -36,7 +36,7 @@ const Root = () => {
                   />
                </section>
             ) : (
-               <p className="text-center text-gray-500 dark:text-gray-400 mt-14 md:ml-12">
+               <p className="text-center text-gray-500 dark:text-gray-400 mt-14">
                   Log in to create or view your schedule!
                </p>
             )}

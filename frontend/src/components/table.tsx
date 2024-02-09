@@ -53,7 +53,7 @@ const Table = () => {
        md:table-md dark:text-white"
                            >
                               <thead>
-                                 <tr className="bg-slate-100 dark:bg-gray-800 text-xs md:text-base dark:text-white">
+                                 <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
                                     <td>Course Code</td>
                                     <td>Course Name</td>
                                     <td>Time</td>

@@ -15,7 +15,10 @@ const ThemeSwitcher = () => {
    return (
       <>
          {/** Toggle Switch from daisyui */}
-         <label className="flex cursor-pointer gap-2">
+         <label
+            className="flex cursor-pointer gap-2"
+            htmlFor="theme-controller"
+         >
             {/** Sun Icon */}
             <svg
                xmlns="http://www.w3.org/2000/svg"

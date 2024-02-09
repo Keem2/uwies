@@ -1,21 +1,21 @@
 //DaisyUI dropdown - Used in navbar
-import { createClient } from "@supabase/supabase-js";
+
+import supabase from "../../utils/supbaseClient";
 import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../../assets/google.svg";
 import SignOutIcon from "../../assets/signout.svg";
 import UserIcon from "../../assets/user-circle.svg";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { userContext } from "../../routes/root";
-
-//supabase connection. ! is Non-null assertion operator in TS
-const supabase = createClient(
-   import.meta.env.VITE_SUPABASE_UWIES_URL,
-   import.meta.env.VITE_SUPABASE_UWIES_ANON_PUBLIC
-);
+import LoadingButton from "./loadingbutton";
 
 const MenuDropdown = () => {
    //user object
    const [user, setUser]: any = useContext(userContext);
+
+   //loggingIn and loggingOut states for dropdown button
+   const [isLoggingIn, setIsLoggingIn] = useState(false);
+   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
    const navigate = useNavigate();
 
@@ -32,10 +32,12 @@ const MenuDropdown = () => {
       supabase.auth.onAuthStateChange(async (event) => {
          if (event == "SIGNED_IN") {
             navigate("/");
+            setIsLoggingIn(false);
          }
 
          //navigates to the "/" route and refreshes it
          if (event == "SIGNED_OUT") {
+            setIsLoggingOut(false);
             navigate("/");
             navigate(0);
          }
@@ -64,44 +66,61 @@ const MenuDropdown = () => {
    return (
       <>
          {Object.keys(user).length !== 0 ? (
-            <div className="dropdown dropdown- -mt-4 ">
-               <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
-               >
-                  <div className="flex max-w-40 md:max-w-none">
-                     <p className="px-1.5 text-base">
-                        Hello,{" "}
-                        {user.user_metadata.full_name.substring(
-                           0,
-                           user.user_metadata.full_name.indexOf(" ")
-                        )}
-                     </p>
-                  </div>
-               </div>
-
-               <ul
-                  tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
-               >
-                  <li
-                     onClick={() => {
-                        handleLinkClick();
-                        signOutUser();
-                     }}
+            //If user is logging out, show loading button. Else,
+            //show button with user credentials
+            isLoggingOut ? (
+               <LoadingButton
+                  title="Logging out..."
+                  styles="btn btn-ghost px-4 py-1.5 -mt-2 text-base dark:text-white dark:hover:bg-gray-800"
+               />
+            ) : (
+               <div className="dropdown dropdown- -mt-4 ">
+                  <div
+                     tabIndex={0}
+                     role="button"
+                     className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
                   >
-                     <a className="text-sm">
-                        <img
-                           src={SignOutIcon}
-                           alt="Google Icon"
-                           className="w-5 h-5 dark:invert"
-                        />
-                        Log Out
-                     </a>
-                  </li>
-               </ul>
-            </div>
+                     <div className="flex max-w-40 md:max-w-none">
+                        <p className="px-1.5 text-base">
+                           Hello,{" "}
+                           {user.user_metadata.full_name.substring(
+                              0,
+                              user.user_metadata.full_name.indexOf(" ")
+                           )}
+                        </p>
+                     </div>
+                  </div>
+
+                  <ul
+                     tabIndex={0}
+                     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
+                  >
+                     <li
+                        onClick={() => {
+                           handleLinkClick();
+                           setIsLoggingOut(true);
+                           signOutUser();
+                        }}
+                     >
+                        <button className="text-sm">
+                           <img
+                              src={SignOutIcon}
+                              alt="Google Icon"
+                              className="w-5 h-5 dark:invert"
+                           />
+                           Log Out
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+            )
+         ) : //If user is logging in, show loading button. Else,
+         //show log in button
+         isLoggingIn ? (
+            <LoadingButton
+               title="Logging in..."
+               styles="btn btn-ghost px-4 py-1.5 -mt-2 text-base dark:text-white dark:hover:bg-gray-800"
+            />
          ) : (
             <div className="dropdown dropdown- -mt-4">
                <div
@@ -126,19 +145,20 @@ const MenuDropdown = () => {
                   <li
                      onClick={() => {
                         handleLinkClick();
+                        setIsLoggingIn(true);
                         supabase.auth.signInWithOAuth({
                            provider: "google",
                         });
                      }}
                   >
-                     <a className="text-sm">
+                     <button className="text-sm">
                         <img
                            src={GoogleIcon}
                            alt="Google Icon"
                            className="w-5 h-5"
                         />
                         Continue with Google
-                     </a>
+                     </button>
                   </li>
                </ul>
             </div>

@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import Unauthorized from "../components/unauthorized";
 import MultiStepForm from "../components/form/form";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-   import.meta.env.VITE_SUPABASE_UWIES_URL,
-   import.meta.env.VITE_SUPABASE_UWIES_ANON_PUBLIC
-);
+import supabase from "../utils/supbaseClient";
 
 const Create = () => {
    const [isLoggedIn, setIsLoggedIn] = useState(false);

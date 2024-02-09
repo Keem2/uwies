@@ -10,7 +10,7 @@ const LinkButton = ({ title, svgSrc, link }: Props) => {
    return (
       <Link
          to={link}
-         className="font-light text-gray-600 text-center px-5 py-8 rounded-xl border border-gray-400 md:px-12 text-lg block w-100 transition-all cursor-pointer hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700"
+         className="font-light text-gray-600 text-center px-5 py-8 rounded-xl border border-gray-400 md:px-12 text-lg block w-100 transition-all cursor-pointer hover:bg-gray-200 dark:text-gray-300 dark:hover:bg-gray-700 active:scale-90"
       >
          <img
             src={svgSrc}
