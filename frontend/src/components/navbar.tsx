@@ -1,3 +1,4 @@
+//Menu on top of page
 import ThemeSwitcher from "./ui/themeswitcher";
 import MenuDropdown from "./ui/dropdown";
 const Navbar = () => {

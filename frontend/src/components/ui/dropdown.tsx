@@ -6,12 +6,12 @@ import GoogleIcon from "../../assets/google.svg";
 import SignOutIcon from "../../assets/signout.svg";
 import UserIcon from "../../assets/user-circle.svg";
 import { useEffect, useContext, useState } from "react";
-import { userContext } from "../../routes/root";
+import { userContext } from "../../context/userContext";
 import LoadingButton from "./loadingbutton";
 
 const MenuDropdown = () => {
-   //user object
-   const [user, setUser]: any = useContext(userContext);
+   //user object. any is used as type for response object
+   const { user, setUser }: any = useContext(userContext);
 
    //loggingIn and loggingOut states for dropdown button
    const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -31,7 +31,6 @@ const MenuDropdown = () => {
    useEffect(() => {
       supabase.auth.onAuthStateChange(async (event) => {
          if (event == "SIGNED_IN") {
-            navigate("/");
             setIsLoggingIn(false);
          }
 

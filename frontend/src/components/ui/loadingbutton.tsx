@@ -1,3 +1,4 @@
+//Button from DaisyUI
 type Props = {
    title: string;
    styles: string;

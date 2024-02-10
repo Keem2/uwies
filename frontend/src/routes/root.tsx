@@ -5,16 +5,17 @@ import BookmarkIcon from "../assets/bookmark.svg";
 import AddIcon from "../assets/add.svg";
 import Divider from "../components/ui/divider";
 import Table from "../components/table";
-import { createContext, useState } from "react";
+import { useState } from "react";
+import { userContext } from "../context/userContext";
 
 //context for user object, to share witihin whole app
-export const userContext = createContext({});
 
 const Root = () => {
    const [user, setUser] = useState({});
+   const userData = { user, setUser };
 
    return (
-      <userContext.Provider value={[user, setUser]}>
+      <userContext.Provider value={userData}>
          <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
             <Navbar />
 
