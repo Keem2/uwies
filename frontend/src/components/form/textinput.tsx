@@ -1,6 +1,9 @@
+import { ChangeEventHandler } from "react";
 type Props = {
    placeholder?: string;
    label?: string;
+   value: string;
+   onChange: ChangeEventHandler<HTMLInputElement>;
 };
 
 const TextInput = (props: Props) => {
@@ -8,14 +11,16 @@ const TextInput = (props: Props) => {
       <>
          <label
             htmlFor="Schedule Name"
-            className="block text-sm mb-3 dark:text-white"
+            className="block text-base mb-3 dark:text-white font-semibold"
          >
             {props.label}
          </label>
          <input
             type="text"
             placeholder={props.placeholder}
-            className="w-80 md:w-96 outline-none bg-inherit px-3 py-2 border-gray-300  border-b dark:border-gray-500 rounded-md focus:border-black dark:text-white dark:focus:border-white"
+            className="w-full outline-none bg-inherit px-3 py-2 border-gray-300  border-b dark:border-gray-500 rounded-md focus:border-black dark:text-white dark:focus:border-white"
+            value={props.value}
+            onChange={props.onChange}
          />
       </>
    );
