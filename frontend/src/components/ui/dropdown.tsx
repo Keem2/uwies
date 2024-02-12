@@ -27,7 +27,7 @@ const MenuDropdown = () => {
       }
    };
 
-   //navigate if signed in or signed out
+   //logic if user is signed in or signed out
    useEffect(() => {
       supabase.auth.onAuthStateChange(async (event) => {
          if (event == "SIGNED_IN") {
@@ -46,12 +46,16 @@ const MenuDropdown = () => {
    //try to get user data on initial load
    useEffect(() => {
       async function getUserData() {
-         await supabase.auth.getUser().then((value: any) => {
-            if (value.data?.user) {
-               console.log(value.data.user);
-               setUser(value.data.user);
-            }
-         });
+         const { data, error } = await supabase.auth.getSession();
+         if (error) {
+            console.log(error);
+         }
+
+         data.session?.user == undefined
+            ? setUser({})
+            : setUser(data.session?.user);
+
+         console.log(data.session?.user);
       }
       getUserData();
    }, []);
@@ -64,99 +68,99 @@ const MenuDropdown = () => {
    //if user state object is empty, show log in button. Else, show button with name
    return (
       <>
-         {Object.keys(user).length !== 0 ? (
+         {Object.keys(user).length === 0 || user.session === "undefined" ? (
             //If user is logging out, show loading button. Else,
             //show button with user credentials
-            isLoggingOut ? (
+            isLoggingIn ? (
                <LoadingButton
-                  title="Logging out..."
+                  title="Logging in..."
                   styles="btn btn-ghost px-4 py-1.5 -mt-2 text-base dark:text-white dark:hover:bg-gray-800"
                />
             ) : (
-               <div className="dropdown dropdown- -mt-4 ">
+               <div className="dropdown dropdown- -mt-4">
                   <div
                      tabIndex={0}
                      role="button"
-                     className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
+                     className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800"
                   >
-                     <div className="flex max-w-40 md:max-w-none">
-                        <p className="px-1.5 text-base">
-                           Hello,{" "}
-                           {user.user_metadata.full_name.substring(
-                              0,
-                              user.user_metadata.full_name.indexOf(" ")
-                           )}
-                        </p>
+                     <div className="flex">
+                        <img
+                           src={UserIcon}
+                           alt="User Icon"
+                           className="w-6 h-6 dark:invert"
+                        />
+                        <p className="px-1.5 text-base">Log In</p>
                      </div>
                   </div>
 
                   <ul
                      tabIndex={0}
-                     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
+                     className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60 dark:bg-gray-800"
                   >
                      <li
                         onClick={() => {
                            handleLinkClick();
-                           setIsLoggingOut(true);
-                           signOutUser();
+                           setIsLoggingIn(true);
+                           supabase.auth.signInWithOAuth({
+                              provider: "google",
+                           });
                         }}
                      >
                         <button className="text-sm">
                            <img
-                              src={SignOutIcon}
+                              src={GoogleIcon}
                               alt="Google Icon"
-                              className="w-5 h-5 dark:invert"
+                              className="w-5 h-5"
                            />
-                           Log Out
+                           Continue with Google
                         </button>
                      </li>
                   </ul>
                </div>
-            )
-         ) : //If user is logging in, show loading button. Else,
-         //show log in button
-         isLoggingIn ? (
+            ) //If user is logging in, show loading button. Else,
+         ) : //show log in button
+
+         isLoggingOut ? (
             <LoadingButton
-               title="Logging in..."
+               title="Logging out..."
                styles="btn btn-ghost px-4 py-1.5 -mt-2 text-base dark:text-white dark:hover:bg-gray-800"
             />
          ) : (
-            <div className="dropdown dropdown- -mt-4">
+            <div className="dropdown dropdown- -mt-4 ">
                <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800"
+                  className="btn btn-ghost m-1 px-4 py-3 transition-transform dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800 w-max"
                >
-                  <div className="flex">
-                     <img
-                        src={UserIcon}
-                        alt="User Icon"
-                        className="w-6 h-6 dark:invert"
-                     />
-                     <p className="px-1.5 text-base">Log In</p>
+                  <div className="flex max-w-40 md:max-w-none">
+                     <p className="px-1.5 text-base">
+                        Hello,{" "}
+                        {user.user_metadata.full_name.substring(
+                           0,
+                           user.user_metadata.full_name.indexOf(" ")
+                        )}
+                     </p>
                   </div>
                </div>
 
                <ul
                   tabIndex={0}
-                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-60 dark:bg-gray-800"
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
                >
                   <li
                      onClick={() => {
                         handleLinkClick();
-                        setIsLoggingIn(true);
-                        supabase.auth.signInWithOAuth({
-                           provider: "google",
-                        });
+                        setIsLoggingOut(true);
+                        signOutUser();
                      }}
                   >
                      <button className="text-sm">
                         <img
-                           src={GoogleIcon}
+                           src={SignOutIcon}
                            alt="Google Icon"
-                           className="w-5 h-5"
+                           className="w-5 h-5 dark:invert"
                         />
-                        Continue with Google
+                        Log Out
                      </button>
                   </li>
                </ul>
