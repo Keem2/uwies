@@ -68,9 +68,8 @@ const MenuDropdown = () => {
    //if user state object is empty, show log in button. Else, show button with name
    return (
       <>
-         {Object.keys(user).length === 0 || user.session === "undefined" ? (
-            //If user is logging out, show loading button. Else,
-            //show button with user credentials
+         {Object.keys(user).length === 0 ? (
+            //If user is logging in, show loading button. Else, show log in button
             isLoggingIn ? (
                <LoadingButton
                   title="Logging in..."
@@ -117,9 +116,9 @@ const MenuDropdown = () => {
                      </li>
                   </ul>
                </div>
-            ) //If user is logging in, show loading button. Else,
-         ) : //show log in button
-
+            )
+         ) : //If user is logging out, show loading button. Else,
+         //show button with user credentials
          isLoggingOut ? (
             <LoadingButton
                title="Logging out..."
