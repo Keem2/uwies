@@ -4,8 +4,8 @@ import Root from "./routes/root";
 import Create from "./routes/create";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ProtectedRoute } from "./routes/protectedroute";
 
-//Routes from react-router
 const router = createBrowserRouter([
    {
       path: "/",
@@ -13,7 +13,11 @@ const router = createBrowserRouter([
    },
    {
       path: "/create",
-      element: <Create />,
+      element: (
+         <ProtectedRoute>
+            <Create />
+         </ProtectedRoute>
+      ),
    },
    {
       path: "/saved",

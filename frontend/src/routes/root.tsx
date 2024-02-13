@@ -8,9 +8,8 @@ import Table from "../components/table";
 import { useState } from "react";
 import { userContext } from "../context/userContext";
 
-//context for user object, to share witihin whole app
-
 const Root = () => {
+   //context for user object
    const [user, setUser] = useState({});
    const userData = { user, setUser };
 
