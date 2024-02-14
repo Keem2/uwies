@@ -37,6 +37,7 @@ const CourseSelectionForm = ({
    const [search, setSearch] = useState("");
 
    const [courseSelection, setCourseSelection] = useState(chosenCourses);
+
    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(event.target.value);
    };
@@ -93,28 +94,38 @@ const CourseSelectionForm = ({
                            <td>{exam.description}</td>
                            <th className="bg-slate-50 dark:bg-gray-900">
                               <div className="flex justify-center">
-                                 <button
-                                    type="button"
-                                    className="btn w-16
+                                 {/**If course has been added to courseSelection state array, change from add button to added */}
+                                 {courseSelection.filter(
+                                    (course) =>
+                                       course.description === exam.description
+                                 ).length > 0 ? (
+                                    <p className="border border-black dark:border-white p-2 rounded-md">
+                                       Added
+                                    </p>
+                                 ) : (
+                                    <button
+                                       type="button"
+                                       className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                    onClick={() => {
-                                       setCourseSelection([
-                                          ...courseSelection,
-                                          {
-                                             course: exam.course,
-                                             description: exam.description,
-                                             time: exam.time,
-                                             hours: exam.hours,
-                                             location: exam.location,
-                                             room: exam.room,
-                                             date: exam.date,
-                                          },
-                                       ]);
-                                    }}
-                                 >
-                                    Add
-                                 </button>
+                                       onClick={() => {
+                                          setCourseSelection([
+                                             ...courseSelection,
+                                             {
+                                                course: exam.course,
+                                                description: exam.description,
+                                                time: exam.time,
+                                                hours: exam.hours,
+                                                location: exam.location,
+                                                room: exam.room,
+                                                date: exam.date,
+                                             },
+                                          ]);
+                                       }}
+                                    >
+                                       Add
+                                    </button>
+                                 )}
                               </div>
                            </th>
                         </tr>
@@ -122,6 +133,8 @@ const CourseSelectionForm = ({
                </tbody>
             </table>
          </div>
+
+         {/**Course Selection Table  */}
          {chosenCourses.length === 0 ? (
             <p className="text-slate-500 dark:text-slate-300 italic text-center mt-20 text-md">
                Courses you add will appear here!
@@ -167,7 +180,16 @@ const CourseSelectionForm = ({
                                              className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                             onClick={() => {}}
+                                             onClick={() => {
+                                                //Remove from courseSelection array
+                                                setCourseSelection(
+                                                   courseSelection.filter(
+                                                      (exam) =>
+                                                         exam.description !==
+                                                         course.description
+                                                   )
+                                                );
+                                             }}
                                           >
                                              Remove
                                           </button>
