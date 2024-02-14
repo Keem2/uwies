@@ -6,7 +6,15 @@ import { FormEvent, useState } from "react";
 
 type FormData = {
    scheduleName: string;
-   chosenCourses: { courseCode: string; courseName: string }[];
+   chosenCourses: {
+      course: string;
+      description: string;
+      time: string;
+      hours: string;
+      location: string;
+      room: string;
+      date: string;
+   }[];
 };
 //initial form data
 const INITIAL_FORM_DATA: FormData = {
@@ -30,7 +38,7 @@ const MultiStepForm = () => {
    const { step, isFirstStep, isLastStep, nextStep, prevStep } =
       useMultiStepForm([
          <ScheduleNameForm {...data} updateFields={updateFields} />,
-         <CourseSelectionForm />,
+         <CourseSelectionForm {...data} updateFields={updateFields} />,
       ]);
 
    //function when submitting form
@@ -38,6 +46,7 @@ const MultiStepForm = () => {
       e.preventDefault();
       if (!isLastStep) return nextStep();
       console.log(data.scheduleName);
+      console.log(data.chosenCourses);
    };
 
    return (
@@ -48,7 +57,7 @@ const MultiStepForm = () => {
             </h1>
             {/**Current step's Component */}
             {step}
-            <div className=" flex justify-between mt-20">
+            <div className=" flex justify-between mt-20 -ml-4">
                {!isFirstStep && (
                   <button
                      type="button"

@@ -5,7 +5,7 @@ type FormWrapperProps = {
    children: ReactNode;
 };
 const FormWrapper = ({ children }: FormWrapperProps) => {
-   return <div className="flex flex-col">{children}</div>;
+   return <div className="flex flex-col -ml-4">{children}</div>;
 };
 
 export default FormWrapper;
