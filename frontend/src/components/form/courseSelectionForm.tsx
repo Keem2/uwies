@@ -62,9 +62,9 @@ const CourseSelectionForm = () => {
                               <div className="flex justify-center">
                                  <button
                                     type="button"
-                                    className="btn w-16 
+                                    className="btn w-16
                                     md:w-18
-                          bg-black dark:bg-slate-700 text-white hover:bg-neutral-600 dark:hover:bg-slate-600"
+                          bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
                                  >
                                     Add
                                  </button>

@@ -52,7 +52,7 @@ const MultiStepForm = () => {
                {!isFirstStep && (
                   <button
                      type="button"
-                     className="btn w-24 bg-black dark:bg-slate-700 text-white hover:bg-neutral-600 dark:hover:bg-slate-600"
+                     className="btn w-24 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
                      onClick={prevStep}
                   >
                      Back
@@ -60,7 +60,7 @@ const MultiStepForm = () => {
                )}
                <button
                   type="submit"
-                  className="btn w-24 bg-black dark:bg-slate-700 text-white hover:bg-neutral-600 dark:hover:bg-slate-600"
+                  className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
                >
                   {isLastStep ? "Create" : "Next"}
                </button>
