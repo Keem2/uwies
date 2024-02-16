@@ -18,7 +18,7 @@ const TextInput = (props: Props) => {
          <input
             type="text"
             placeholder={props.placeholder}
-            className="w-full outline-none bg-inherit px-3 py-2 border-gray-300  border-b dark:border-gray-500 rounded-md focus:border-black dark:text-white dark:focus:border-white"
+            className="w-full outline-none bg-inherit px-3 py-2 border-gray-300  border-b dark:border-gray-500 rounded-md  focus:border-black dark:text-white dark:focus:border-white invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
             value={props.value}
             onChange={props.onChange}
          />

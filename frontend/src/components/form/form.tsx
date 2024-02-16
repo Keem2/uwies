@@ -24,6 +24,10 @@ const INITIAL_FORM_DATA: FormData = {
 const MultiStepForm = () => {
    //form data state
    const [data, setData] = useState(INITIAL_FORM_DATA);
+   const [isEmpty, setIsEmpty] = useState({
+      name: false,
+      courseList: false,
+   });
 
    const updateFields = (fields: Partial<FormData>) => {
       //partial type allows you to pass in specific properties of a chosen type, instead of all
@@ -37,16 +41,39 @@ const MultiStepForm = () => {
    //{...data} is to use pass state data to components
    const { step, isFirstStep, isLastStep, nextStep, prevStep } =
       useMultiStepForm([
-         <ScheduleNameForm {...data} updateFields={updateFields} />,
-         <CourseSelectionForm {...data} updateFields={updateFields} />,
+         <ScheduleNameForm
+            {...data}
+            updateFields={updateFields}
+            isEmpty={isEmpty.name}
+         />,
+         <CourseSelectionForm
+            {...data}
+            updateFields={updateFields}
+            isEmpty={isEmpty.courseList}
+         />,
       ]);
 
-   //function when submitting form
+   //function when submitting form to validate
    const handleSubmit = (e: FormEvent) => {
       e.preventDefault();
-      if (!isLastStep) return nextStep();
-      console.log(data.scheduleName);
-      console.log(data.chosenCourses);
+      if (!isLastStep)
+         if (data.scheduleName === "") {
+            setIsEmpty({ name: true, courseList: false });
+         } else {
+            setIsEmpty({ name: false, courseList: false });
+            return nextStep();
+         }
+      else if (data.chosenCourses.length === 0) {
+         setIsEmpty({ name: false, courseList: true });
+      } else if (
+         isLastStep &&
+         data.scheduleName != "" &&
+         data.chosenCourses.length !== 0
+      ) {
+         setIsEmpty({ name: false, courseList: false });
+         console.log(data.scheduleName);
+         console.log(data.chosenCourses);
+      }
    };
 
    return (
