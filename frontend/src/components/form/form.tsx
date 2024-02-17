@@ -3,6 +3,7 @@ import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import ScheduleNameForm from "./scheduleNameForm";
 import CourseSelectionForm from "./courseSelectionForm";
 import { FormEvent, useState } from "react";
+import ScheduleCreated from "./scheduleCreated";
 
 type FormData = {
    scheduleName: string;
@@ -39,19 +40,27 @@ const MultiStepForm = () => {
    };
 
    //{...data} is to use pass state data to components
-   const { step, isFirstStep, isLastStep, nextStep, prevStep } =
-      useMultiStepForm([
-         <ScheduleNameForm
-            {...data}
-            updateFields={updateFields}
-            isEmpty={isEmpty.name}
-         />,
-         <CourseSelectionForm
-            {...data}
-            updateFields={updateFields}
-            isEmpty={isEmpty.courseList}
-         />,
-      ]);
+   const {
+      step,
+      currentStep,
+      isFirstStep,
+      isLastStep,
+      nextStep,
+      prevStep,
+      goToStep,
+   } = useMultiStepForm([
+      <ScheduleNameForm
+         {...data}
+         updateFields={updateFields}
+         isEmpty={isEmpty.name}
+      />,
+      <CourseSelectionForm
+         {...data}
+         updateFields={updateFields}
+         isEmpty={isEmpty.courseList}
+      />,
+      <ScheduleCreated />,
+   ]);
 
    //function when submitting form to validate
    const handleSubmit = (e: FormEvent) => {
@@ -73,33 +82,41 @@ const MultiStepForm = () => {
          setIsEmpty({ name: false, courseList: false });
          console.log(data.scheduleName);
          console.log(data.chosenCourses);
+         goToStep(2);
       }
    };
 
    return (
       <form onSubmit={handleSubmit}>
          <div className="ml-7 mt-7">
-            <h1 className="dark:text-slate-300 font-extrabold mb-10 text-3xl md:text-4xl">
-               Create Schedule
-            </h1>
+            {currentStep !== 2 && (
+               <h1 className="dark:text-slate-300 font-extrabold mb-10 text-3xl md:text-4xl">
+                  Create Schedule
+               </h1>
+            )}
+
             {/**Current step's Component */}
             {step}
             <div className=" flex justify-between mt-20 -ml-4">
-               {!isFirstStep && (
-                  <button
-                     type="button"
-                     className="btn w-24 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                     onClick={prevStep}
-                  >
-                     Back
-                  </button>
+               {currentStep !== 2 && (
+                  <>
+                     {!isFirstStep && (
+                        <button
+                           type="button"
+                           className="btn w-24 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
+                           onClick={prevStep}
+                        >
+                           Back
+                        </button>
+                     )}
+                     <button
+                        type="submit"
+                        className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
+                     >
+                        {isLastStep ? "Create" : "Next"}
+                     </button>
+                  </>
                )}
-               <button
-                  type="submit"
-                  className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-               >
-                  {isLastStep ? "Create" : "Next"}
-               </button>
             </div>
          </div>
       </form>

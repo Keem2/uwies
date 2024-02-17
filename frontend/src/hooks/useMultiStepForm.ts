@@ -22,7 +22,7 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
     }
 
     const goToStep = (index: number) => {
-        //go to a specific step number
+        //go to a specific step number. Zero based indexing
         setCurrentStep(index)
     }
     return {
@@ -30,7 +30,7 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
         step: steps[currentStep],
         steps,
         isFirstStep: currentStep === 0,
-        isLastStep: currentStep === steps.length - 1,
+        isLastStep: currentStep === steps.length - 2,
         goToStep,
         nextStep,
         prevStep
