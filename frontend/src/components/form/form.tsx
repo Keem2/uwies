@@ -2,8 +2,11 @@
 import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import ScheduleNameForm from "./scheduleNameForm";
 import CourseSelectionForm from "./courseSelectionForm";
-import { FormEvent, useState } from "react";
+import LoadingButton from "../ui/loadingbutton";
+import { FormEvent, useState, useContext } from "react";
 import ScheduleCreated from "./scheduleCreated";
+import supabase from "../../utils/supbaseClient";
+import { userContext } from "../../context/userContext";
 
 type FormData = {
    scheduleName: string;
@@ -23,12 +26,17 @@ const INITIAL_FORM_DATA: FormData = {
    chosenCourses: [],
 };
 const MultiStepForm = () => {
+   //user context
+   const { user }: any = useContext(userContext);
    //form data state
    const [data, setData] = useState(INITIAL_FORM_DATA);
    const [isEmpty, setIsEmpty] = useState({
       name: false,
       courseList: false,
    });
+
+   //isLoading state for create button
+   const [isLoading, setIsLoading] = useState(false);
 
    const updateFields = (fields: Partial<FormData>) => {
       //partial type allows you to pass in specific properties of a chosen type, instead of all
@@ -80,10 +88,26 @@ const MultiStepForm = () => {
          data.chosenCourses.length !== 0
       ) {
          setIsEmpty({ name: false, courseList: false });
-         console.log(data.scheduleName);
-         console.log(data.chosenCourses);
-         goToStep(2);
+         createSchedule();
       }
+   };
+
+   //function to insert schedule details to database
+   const createSchedule = async () => {
+      setIsLoading(true);
+      const { error } = await supabase
+         .from("schedule")
+         .insert([
+            {
+               userid: user.id,
+               name: data.scheduleName,
+               courses: data.chosenCourses,
+            },
+         ])
+         .single();
+      if (error) console.log(error);
+      setIsLoading(false);
+      goToStep(2);
    };
 
    return (
@@ -109,12 +133,19 @@ const MultiStepForm = () => {
                            Back
                         </button>
                      )}
-                     <button
-                        type="submit"
-                        className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                     >
-                        {isLastStep ? "Create" : "Next"}
-                     </button>
+                     {isLoading ? (
+                        <LoadingButton
+                           title="Creating..."
+                           styles="btn btn-ghost px-4 py-1.5 -mt-2 text-base dark:text-white dark:hover:bg-gray-800"
+                        />
+                     ) : (
+                        <button
+                           type="submit"
+                           className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
+                        >
+                           {isLastStep ? "Create" : "Next"}
+                        </button>
+                     )}
                   </>
                )}
             </div>
