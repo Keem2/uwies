@@ -114,7 +114,7 @@ const MultiStepForm = () => {
       <form onSubmit={handleSubmit}>
          <div className="ml-7 mt-7">
             {currentStep !== 2 && (
-               <h1 className="dark:text-slate-300 font-extrabold mb-10 text-3xl md:text-4xl">
+               <h1 className="capitalize dark:text-slate-300 font-extrabold mb-10 text-3xl md:text-4xl">
                   Create Schedule
                </h1>
             )}
