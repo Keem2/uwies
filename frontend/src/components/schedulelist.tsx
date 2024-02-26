@@ -12,7 +12,7 @@ const ScheduleList = () => {
                   <h2 className="card-title text-neutral-700 dark:text-slate-300">
                      Semester 2
                   </h2>
-                  <ul className="pt-3 text-base break-words text-gray-400 dark:text-gray-400 list-none">
+                  <ul className="pt-3 text-base break-words text-gray-500 dark:text-gray-400 list-none">
                      <li>11</li>
                      <li>2</li>
                      <li>3</li>
