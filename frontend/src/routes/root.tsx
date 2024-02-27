@@ -27,12 +27,14 @@ const Root = () => {
                      title={"Create your schedule"}
                      svgSrc={AddIcon}
                      link={`create`}
+                     alt={"Create Icon"}
                   />
 
                   <LinkButton
                      title={"View saved schedules"}
                      svgSrc={BookmarkIcon}
                      link={`view`}
+                     alt={"Saved Icon"}
                   />
                </section>
             ) : (
