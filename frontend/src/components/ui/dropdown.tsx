@@ -1,17 +1,18 @@
 //DaisyUI dropdown - Used in navbar
 
-import supabase from "../../utils/supbaseClient";
+import supabase from "../../utils/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../../assets/google.svg";
 import SignOutIcon from "../../assets/signout.svg";
 import UserIcon from "../../assets/user-circle.svg";
-import { useEffect, useContext, useState } from "react";
-import { userContext } from "../../context/userContext";
+import { useEffect, useState } from "react";
 import LoadingButton from "./loadingbutton";
+import { useSession } from "@supabase/auth-helpers-react";
 
 const MenuDropdown = () => {
    //user object. any is used as type for response object
-   const { user, setUser }: any = useContext(userContext);
+
+   const session = useSession();
 
    //loggingIn and loggingOut states for dropdown button
    const [isLoggingIn, setIsLoggingIn] = useState(false);
@@ -27,6 +28,13 @@ const MenuDropdown = () => {
       }
    };
 
+   const googleSignIn = async () => {
+      const { error } = await supabase.auth.signInWithOAuth({
+         provider: "google",
+      });
+      if (error) console.log(error);
+   };
+
    //logic if user is signed in or signed out
    useEffect(() => {
       supabase.auth.onAuthStateChange(async (event) => {
@@ -38,27 +46,11 @@ const MenuDropdown = () => {
          if (event == "SIGNED_OUT") {
             setIsLoggingOut(false);
             navigate("/");
-            navigate(0);
          }
       });
    }, []);
 
    //try to get user data on initial load
-   useEffect(() => {
-      async function getUserData() {
-         const { data, error } = await supabase.auth.getSession();
-         if (error) {
-            console.log(error);
-         }
-
-         data.session?.user == undefined
-            ? setUser({})
-            : setUser(data.session?.user);
-
-         console.log(data.session?.user);
-      }
-      getUserData();
-   }, []);
 
    //function to sign out user
    async function signOutUser() {
@@ -68,7 +60,7 @@ const MenuDropdown = () => {
    //if user state object is empty, show log in button. Else, show button with name
    return (
       <>
-         {Object.keys(user).length === 0 ? (
+         {session === null ? (
             //If user is logging in, show loading button. Else, show log in button
             isLoggingIn ? (
                <LoadingButton
@@ -100,9 +92,7 @@ const MenuDropdown = () => {
                         onClick={() => {
                            handleLinkClick();
                            setIsLoggingIn(true);
-                           supabase.auth.signInWithOAuth({
-                              provider: "google",
-                           });
+                           googleSignIn();
                         }}
                      >
                         <button className="text-sm">
@@ -134,9 +124,9 @@ const MenuDropdown = () => {
                   <div className="flex max-w-40 md:max-w-none">
                      <p className="px-1.5 text-base">
                         Hello,{" "}
-                        {user.user_metadata.full_name.substring(
+                        {session.user.user_metadata.name.substring(
                            0,
-                           user.user_metadata.full_name.indexOf(" ")
+                           session.user.user_metadata.name.indexOf(" ")
                         )}
                      </p>
                   </div>

@@ -41,7 +41,7 @@ const Table = () => {
                      <>
                         <p
                            className={
-                              "dark:text-white font-semibold text-base md:text-lg sticky top-0.5 bg-slate-50 py-2 dark:bg-gray-900 z-10"
+                              "dark:text-white font-semibold text-base md:text-lg sticky -top-4 bg-slate-50 py-2 dark:bg-gray-900 z-10"
                            }
                         >
                            {date}

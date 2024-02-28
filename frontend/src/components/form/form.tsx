@@ -3,10 +3,10 @@ import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import ScheduleNameForm from "./scheduleNameForm";
 import CourseSelectionForm from "./courseSelectionForm";
 import LoadingButton from "../ui/loadingbutton";
-import { FormEvent, useState, useContext } from "react";
+import { FormEvent, useState } from "react";
 import ScheduleCreated from "./scheduleCreated";
-import supabase from "../../utils/supbaseClient";
-import { userContext } from "../../context/userContext";
+import supabase from "../../utils/supabaseClient";
+import { useSession } from "@supabase/auth-helpers-react";
 
 type FormData = {
    scheduleName: string;
@@ -27,7 +27,8 @@ const INITIAL_FORM_DATA: FormData = {
 };
 const MultiStepForm = () => {
    //user context
-   const { user }: any = useContext(userContext);
+   const session: any = useSession();
+
    //form data state
    const [data, setData] = useState(INITIAL_FORM_DATA);
    const [isEmpty, setIsEmpty] = useState({
@@ -99,7 +100,7 @@ const MultiStepForm = () => {
          .from("schedule")
          .insert([
             {
-               userid: user.id,
+               userid: session?.user.id,
                name: data.scheduleName,
                courses: data.chosenCourses,
             },
