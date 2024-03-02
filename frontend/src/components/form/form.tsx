@@ -7,6 +7,7 @@ import { FormEvent, useState } from "react";
 import ScheduleCreated from "./scheduleCreated";
 import supabase from "../../utils/supabaseClient";
 import { useSession } from "@supabase/auth-helpers-react";
+import FormError from "./formError";
 
 type FormData = {
    scheduleName: string;
@@ -69,6 +70,7 @@ const MultiStepForm = () => {
          isEmpty={isEmpty.courseList}
       />,
       <ScheduleCreated />,
+      <FormError />,
    ]);
 
    //function when submitting form to validate
@@ -106,7 +108,7 @@ const MultiStepForm = () => {
             },
          ])
          .single();
-      if (error) console.log(error);
+      if (error) goToStep(3);
       setIsLoading(false);
       goToStep(2);
    };

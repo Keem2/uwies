@@ -18,5 +18,4 @@ export const ProtectedRoute = ({ children }: { children: ReactElement }) => {
         navigate("/")
     }, [])
 
-
 }
