@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import supabase from "../utils/supabaseClient";
 import { useSession } from "@supabase/auth-helpers-react";
+import { Link } from "react-router-dom";
 
 type ScheduleCard = {
    courses: { course: string; description: string }[] | null;
@@ -42,7 +43,31 @@ const ScheduleList = () => {
             {!isLoading ? (
                <>
                   {schedule.length === 0 ? (
-                     <></>
+                     <div className="flex flex-col justify-center w-full">
+                        <p className="text-slate-500 dark:text-slate-300 italic text-center mt-20 text-md">
+                           You have not created a schedule...yet
+                        </p>
+                        <Link
+                           to={`/create`}
+                           className="btn mx-auto my-8 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
+                        >
+                           <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
+                              className="w-6 h-6"
+                           >
+                              <path
+                                 strokeLinecap="round"
+                                 strokeLinejoin="round"
+                                 d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                              />
+                           </svg>
+                           Create schedule
+                        </Link>
+                     </div>
                   ) : (
                      schedule.map((schedule: ScheduleCard, index: number) => (
                         <div
