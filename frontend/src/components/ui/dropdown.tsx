@@ -1,5 +1,5 @@
 //DaisyUI dropdown - Used in navbar
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import supabase from "../../utils/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../../assets/google.svg";
@@ -145,7 +145,14 @@ const MenuDropdown = () => {
                   className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
                >
                   <li className="dark:hover:bg-gray-700 rounded-lg dark:text-white mb-2">
-                     <Link to={`/`}>
+                     <NavLink
+                        to={`/`}
+                        style={({ isActive }) => {
+                           /**returns daisyui
+                            * active style if link is active*/
+                           return isActive ? {} : {};
+                        }}
+                     >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            fill="none"
@@ -161,10 +168,15 @@ const MenuDropdown = () => {
                            />
                         </svg>
                         Home
-                     </Link>
+                     </NavLink>
                   </li>
-                  <li className="dark:hover:bg-gray-700 rounded-lg dark:text-white mb-2">
-                     <Link to={`/view`}>
+                  <li className="active dark:hover:bg-gray-700 rounded-lg dark:text-white mb-2">
+                     <NavLink
+                        to={`/view`}
+                        style={({ isActive }) => {
+                           return isActive ? {} : {};
+                        }}
+                     >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            fill="none"
@@ -180,7 +192,7 @@ const MenuDropdown = () => {
                            />
                         </svg>
                         Schedules
-                     </Link>
+                     </NavLink>
                   </li>
                   <li
                      onClick={() => {
