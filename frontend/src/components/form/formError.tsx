@@ -12,13 +12,15 @@ const FormError = () => {
          <p className="mt-1 text-xl md:text-2xl dark:text-white font-semibold">
             An error occurred.
          </p>
-         <button
-            type="button"
-            className="border-gray-600 rounded-lg border py-3 dark:text-white dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
-            onClick={() => navigate(0)}
-         ></button>
-         Try again
+
          <div className="flex mx-12 md:mx-32 lg:mx-96 mt-12 gap-10 justify-center flex-col">
+            <button
+               type="button"
+               className="border-gray-600 rounded-lg border py-3 dark:text-white dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
+               onClick={() => navigate(0)}
+            >
+               Try again
+            </button>
             <Link
                to={"/"}
                className="border-gray-600 rounded-lg border py-3 dark:text-white dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"

@@ -108,9 +108,13 @@ const MultiStepForm = () => {
             },
          ])
          .single();
-      if (error) goToStep(3);
-      setIsLoading(false);
-      goToStep(2);
+      if (error) {
+         setIsLoading(false);
+         goToStep(3);
+      } else {
+         setIsLoading(false);
+         goToStep(2);
+      }
    };
 
    return (
@@ -125,7 +129,7 @@ const MultiStepForm = () => {
             {/**Current step's Component */}
             {step}
             <div className=" flex justify-between mt-20 -ml-4">
-               {currentStep !== 2 && (
+               {currentStep < 2 && (
                   <>
                      {!isFirstStep && (
                         <button
