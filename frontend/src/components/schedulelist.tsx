@@ -1,7 +1,8 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useContext } from "react";
 import supabase from "../utils/supabaseClient";
 import { useSession } from "@supabase/auth-helpers-react";
 import { Link, useNavigate } from "react-router-dom";
+import { CurrentScheduleContext } from "../context/currentScheduleContext";
 
 //type for schedule information
 type ScheduleCard = {
@@ -12,6 +13,7 @@ type ScheduleCard = {
    created_at: string;
 };
 const ScheduleList = () => {
+   const { setCurrentSchedule } = useContext(CurrentScheduleContext);
    const navigate = useNavigate();
    const session: any = useSession();
    const [schedule, setSchedule] = useState<any>([]);
@@ -48,8 +50,6 @@ const ScheduleList = () => {
    useEffect(() => {
       getSchedules();
    }, [isLoading]);
-
-   console.log(schedule);
 
    return (
       <section className="ml-1 md:ml-5 mt-7">
@@ -101,9 +101,11 @@ const ScheduleList = () => {
                         })
                         .map((schedule: ScheduleCard, index: number) => (
                            <Fragment key={index}>
-                              <div
+                              <Link
+                                 to={`/view/${schedule.id}`}
                                  className="card w-80 bg-slate-200 dark:bg-gray-700 text-primary-content cursor-pointer shadow"
                                  key={index}
+                                 onClick={() => setCurrentSchedule(schedule)}
                               >
                                  <div className="card-body">
                                     <h2 className="card-title text-neutral-700 dark:text-slate-300">
@@ -165,7 +167,7 @@ const ScheduleList = () => {
                                        </svg>
                                     </div>
                                  </div>
-                              </div>
+                              </Link>
                               <dialog
                                  id={schedule.id as any}
                                  className="modal"
