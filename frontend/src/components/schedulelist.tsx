@@ -105,6 +105,7 @@ const ScheduleList = () => {
                                  className="card w-80 bg-slate-200 dark:bg-gray-700 text-primary-content cursor-pointer shadow"
                                  key={index}
                                  onClick={() => {
+                                    //set current schedule to shedule context & navigate
                                     setCurrentSchedule(schedule);
                                     navigate(`/view/${schedule.id}`);
                                  }}

@@ -33,8 +33,10 @@ type Course = {
 
 const ScheduleDetails = () => {
    const session: any = useSession();
+   //url params
    let { id }: any = useParams();
    const [isCorrectSchedule, setisCorrectSchedule] = useState(false);
+   //cuurent schedule's context
    const { currentSchedule }: any = useContext(CurrentScheduleContext);
 
    let scheduleList = currentSchedule.courses
