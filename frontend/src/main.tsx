@@ -9,11 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProtectedRoute } from "./routes/protectedroute";
 import supabase from "./utils/supabaseClient";
 import { SessionContextProvider } from "@supabase/auth-helpers-react"; // session context
-<<<<<<< HEAD
 import { CurrentScheduleContextProvider } from "./context/currentScheduleContext";
-=======
-import { CurrentScheduleContextProvider } from "../context/currentScheduleContext";
->>>>>>> 7a8c18c08893ec916c76daa31dde93ed43f2d194
 
 const router = createBrowserRouter([
    {

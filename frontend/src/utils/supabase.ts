@@ -1,4 +1,4 @@
-//database types
+//database typess
 export type Json =
   | string
   | number
