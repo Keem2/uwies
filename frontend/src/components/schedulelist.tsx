@@ -15,7 +15,7 @@ type ScheduleCard = {
 const ScheduleList = () => {
    const { setCurrentSchedule } = useContext(CurrentScheduleContext);
    const navigate = useNavigate();
-   const session: any = useSession();
+   const session = useSession();
    const [schedule, setSchedule] = useState<any>([]);
    const [isLoading, setIsLoading] = useState(true);
    const [isDeleting, setisDeleting] = useState(false);
@@ -104,8 +104,9 @@ const ScheduleList = () => {
                               <div
                                  className="card w-80 bg-slate-200 dark:bg-gray-700 text-primary-content cursor-pointer shadow"
                                  key={index}
-                                 onClick={() => {
+                                 onClick={(e) => {
                                     //set current schedule to shedule context & navigate
+                                    e.stopPropagation();
                                     setCurrentSchedule(schedule);
                                     navigate(`/view/${schedule.id}`);
                                  }}
@@ -136,6 +137,11 @@ const ScheduleList = () => {
                                           stroke="black"
                                           className="w-6 h-6 hover:stroke-blue-500
                          dark:stroke-white dark:hover:stroke-blue-500"
+                                          onClick={(e) => {
+                                             e.stopPropagation();
+                                             setCurrentSchedule(schedule);
+                                             navigate(`/edit/${schedule.id}`);
+                                          }}
                                        >
                                           <path
                                              strokeLinecap="round"

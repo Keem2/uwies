@@ -58,8 +58,8 @@ const ScheduleDetails = () => {
          const { data } = await supabase
             .from("schedule")
             .select()
-            .is("userid", session?.user.id)
-            .is("id", id);
+            .eq("userid", session?.user.id)
+            .eq("id", id);
 
          if (data !== null) {
             setisCorrectSchedule(true);
@@ -68,9 +68,16 @@ const ScheduleDetails = () => {
       isTheirSchedule();
    }, [id]);
 
-   if (isCorrectSchedule) {
-      //if isCorrectSchedule state stays false, show nothing
-      return <></>;
+   if (!isCorrectSchedule) {
+      //if isCorrectSchedule state stays false, show loading
+      return (
+         <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+            <Navbar />
+            <div className="ml-5 md:ml-5 mt-7">
+               <span className="loading loading-dots loading-lg bg-black dark:bg-white"></span>
+            </div>
+         </section>
+      );
    }
 
    return (
@@ -83,12 +90,12 @@ const ScheduleDetails = () => {
             {Object.keys(scheduleList).map((date) => {
                let results = scheduleList[date];
                return (
-                  <div className="ml-4 md:ml-1 mb-8">
+                  <div className="ml-4 md:ml-1 mb-8" key={date}>
                      <p className="dark:text-white font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
                         {date}
                      </p>
                      {results.map((course: Course) => (
-                        <div className="overflow-x-auto">
+                        <div className="overflow-x-auto" key={date}>
                            <table
                               key={date}
                               className="table table-sm 
@@ -106,12 +113,16 @@ const ScheduleDetails = () => {
                               </thead>
                               <tbody>
                                  <tr key={date}>
-                                    <td>{course.course}</td>
-                                    <td>{course.description}</td>
-                                    <td>{course.time}</td>
-                                    <td>{course.hours}</td>
-                                    <td>{course.location}</td>
-                                    <td>{course.room}</td>
+                                    <td key={course.course}>{course.course}</td>
+                                    <td key={course.description}>
+                                       {course.description}
+                                    </td>
+                                    <td key={course.time}>{course.time}</td>
+                                    <td key={course.hours}>{course.hours}</td>
+                                    <td key={course.location}>
+                                       {course.location}
+                                    </td>
+                                    <td key={course.room}>{course.room}</td>
                                  </tr>
                               </tbody>
                            </table>

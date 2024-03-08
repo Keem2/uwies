@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Root from "./routes/root";
 import Create from "./routes/create";
 import View from "./routes/view";
+import Edit from "./routes/edit";
 import ScheduleDetails from "./routes/scheduledetails";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
       element: (
          <ProtectedRoute>
             <ScheduleDetails />
+         </ProtectedRoute>
+      ),
+   },
+   {
+      path: "edit/:id",
+      element: (
+         <ProtectedRoute>
+            <Edit />
          </ProtectedRoute>
       ),
    },
