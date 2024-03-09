@@ -8,13 +8,13 @@ import LoadingButton from "./loadingbutton";
 import { useSession } from "@supabase/auth-helpers-react";
 
 const MenuDropdown = () => {
-   //user object. any is used as type for response object
-
+   //session hook which provides session details
    const session = useSession();
 
    //loggingIn and loggingOut states for dropdown button
    const [isLoggingIn, setIsLoggingIn] = useState(false);
    const [isLoggingOut, setIsLoggingOut] = useState(false);
+   const [isLoginError, setIsLoginError] = useState(false);
 
    const navigate = useNavigate();
 
@@ -26,12 +26,23 @@ const MenuDropdown = () => {
       }
    };
 
+   //sign in function
    const googleSignIn = async () => {
       const { error } = await supabase.auth.signInWithOAuth({
          provider: "google",
       });
-      if (error) console.log(error);
+      if (error) {
+         setIsLoggingIn(false);
+         setIsLoginError(true);
+      }
    };
+
+   //hide error toast after 5 seconds
+   useEffect(() => {
+      setTimeout(function () {
+         setIsLoginError(false);
+      }, 5000);
+   }, [isLoginError]);
 
    //logic if user is signed in or signed out
    useEffect(() => {
@@ -40,7 +51,7 @@ const MenuDropdown = () => {
             setIsLoggingIn(false);
          }
 
-         //navigates to the "/" route and refreshes it
+         //navigates to the "/" route
          if (event == "SIGNED_OUT") {
             setIsLoggingOut(false);
             navigate("/");
@@ -48,16 +59,24 @@ const MenuDropdown = () => {
       });
    }, []);
 
-   //try to get user data on initial load
-
    //function to sign out user
    async function signOutUser() {
-      await supabase.auth.signOut();
+      const { error } = await supabase.auth.signOut();
+      if (error) {
+         setIsLoggingOut(false);
+         setIsLoginError(true);
+      }
    }
 
-   //if user state object is empty, show log in button. Else, show button with name
    return (
       <>
+         {isLoginError && (
+            <div className="toast z-20">
+               <div className="alert alert-error">
+                  <span>Something went wrong. Please try again.</span>
+               </div>
+            </div>
+         )}
          {session === null ? (
             //If user is logging in, show loading button. Else, show log in button
             isLoggingIn ? (

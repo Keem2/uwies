@@ -5,6 +5,7 @@ import Create from "./routes/create";
 import View from "./routes/view";
 import Edit from "./routes/edit";
 import ScheduleDetails from "./routes/scheduledetails";
+import ErrorBoundary from "./components/errorBoundary";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProtectedRoute } from "./routes/protectedroute";
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
    {
       path: "/",
       element: <Root />,
+      errorElement: <ErrorBoundary />,
    },
    {
       path: "/create",
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
             <Create />
          </ProtectedRoute>
       ),
+      errorElement: <ErrorBoundary />,
    },
    {
       path: "/view",
@@ -32,6 +35,7 @@ const router = createBrowserRouter([
             <View />
          </ProtectedRoute>
       ),
+      errorElement: <ErrorBoundary />,
    },
    {
       path: "view/:id",
@@ -40,6 +44,7 @@ const router = createBrowserRouter([
             <ScheduleDetails />
          </ProtectedRoute>
       ),
+      errorElement: <ErrorBoundary />,
    },
    {
       path: "edit/:id",
@@ -48,6 +53,7 @@ const router = createBrowserRouter([
             <Edit />
          </ProtectedRoute>
       ),
+      errorElement: <ErrorBoundary />,
    },
 ]);
 

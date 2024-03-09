@@ -19,6 +19,7 @@ const ScheduleList = () => {
    const [schedule, setSchedule] = useState<any>([]);
    const [isLoading, setIsLoading] = useState(true);
    const [isDeleting, setisDeleting] = useState(false);
+   const [isDeleteError, setIsDeleteError] = useState(false);
 
    //function to get user schedules from supabase, placing them in a state array
    const getSchedules = async () => {
@@ -37,12 +38,21 @@ const ScheduleList = () => {
       const { error } = await supabase.from("schedule").delete().eq("id", id);
 
       if (error) {
-         console.log(error);
+         //if error occured, close modal and show toast
+         setisDeleting(false);
+         setIsDeleteError(true);
       } else {
          navigate(0);
          setisDeleting(false);
       }
    };
+
+   //hide error toast after 5 seconds
+   useEffect(() => {
+      setTimeout(function () {
+         setIsDeleteError(false);
+      }, 5000);
+   }, [isDeleteError]);
 
    /**re-renders component when function is ran. isLoading as dependency since schedule
     * state array was resetting on reload
@@ -63,6 +73,17 @@ const ScheduleList = () => {
             is empty or schedules from supabase */}
             {!isLoading ? (
                <>
+                  {/**If error occurs trying
+                   * to delete, toast appears
+                   */}
+                  {isDeleteError && (
+                     <div className="toast z-10">
+                        <div className="alert alert-error">
+                           <span>An error occurred. Please try again.</span>
+                        </div>
+                     </div>
+                  )}
+
                   {schedule.length === 0 ? (
                      <div className="flex flex-col justify-center w-full">
                         <p className="text-slate-500 dark:text-slate-300 italic text-center mt-20 text-md">
@@ -178,48 +199,52 @@ const ScheduleList = () => {
                                     </div>
                                  </div>
                               </div>
-                              <dialog
-                                 id={schedule.id as any}
-                                 className="modal"
-                                 key={schedule.id}
-                              >
-                                 <div className="modal-box dark:bg-neutral dark:text-white">
-                                    <h3 className="font-semibold text-lg">
-                                       Delete {schedule.name}
-                                    </h3>
-                                    <p className="py-4">
-                                       Are you sure you want to delete this
-                                       schedule?
-                                    </p>
-                                    {isDeleting ? (
-                                       <div className="modal-action">
-                                          {/* if there is a button in form, it will close the modal */}
-                                          <p className="btn btn-error text-white">
-                                             <span className="loading loading-spinner"></span>
-                                             Deleting...
-                                          </p>
-                                       </div>
-                                    ) : (
-                                       <div className="modal-action">
-                                          <form method="dialog">
+                              {!isDeleteError && (
+                                 <dialog
+                                    id={schedule.id as any}
+                                    className="modal"
+                                    key={schedule.id}
+                                 >
+                                    <div className="modal-box dark:bg-neutral dark:text-white">
+                                       <h3 className="font-semibold text-lg">
+                                          Delete {schedule.name}
+                                       </h3>
+                                       <p className="py-4">
+                                          Are you sure you want to delete this
+                                          schedule?
+                                       </p>
+                                       {isDeleting ? (
+                                          <div className="modal-action">
                                              {/* if there is a button in form, it will close the modal */}
-                                             <p
-                                                className="btn btn-error mr-5 text-white"
-                                                onClick={() => {
-                                                   setisDeleting(true);
-                                                   deleteSchedule(schedule.id);
-                                                }}
-                                             >
-                                                Delete
+                                             <p className="btn btn-error text-white">
+                                                <span className="loading loading-spinner"></span>
+                                                Deleting...
                                              </p>
-                                             <button className="btn">
-                                                Cancel
-                                             </button>
-                                          </form>
-                                       </div>
-                                    )}
-                                 </div>
-                              </dialog>
+                                          </div>
+                                       ) : (
+                                          <div className="modal-action">
+                                             <form method="dialog">
+                                                {/* if there is a button in form, it will close the modal */}
+                                                <p
+                                                   className="btn btn-error mr-5 text-white"
+                                                   onClick={() => {
+                                                      setisDeleting(true);
+                                                      deleteSchedule(
+                                                         schedule.id
+                                                      );
+                                                   }}
+                                                >
+                                                   Delete
+                                                </p>
+                                                <button className="btn">
+                                                   Cancel
+                                                </button>
+                                             </form>
+                                          </div>
+                                       )}
+                                    </div>
+                                 </dialog>
+                              )}
                            </Fragment>
                         ))
                   )}
