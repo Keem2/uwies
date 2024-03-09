@@ -95,7 +95,7 @@ const ScheduleDetails = () => {
                         {date}
                      </p>
                      {results.map((course: Course) => (
-                        <div className="overflow-x-auto" key={date}>
+                        <div className="overflow-x-auto">
                            <table
                               key={date}
                               className="table table-sm 
@@ -112,7 +112,7 @@ const ScheduleDetails = () => {
                                  </tr>
                               </thead>
                               <tbody>
-                                 <tr key={date}>
+                                 <tr key={course.description}>
                                     <td key={course.course}>{course.course}</td>
                                     <td key={course.description}>
                                        {course.description}
