@@ -23,7 +23,9 @@ const ScheduleNameForm = ({
             <li className="step step-primary dark:text-white text-black">
                Enter name
             </li>
-            <li className="step dark:text-white text-black">Choose courses</li>
+            <li className="step dark:text-white text-black stroke-red-500">
+               Choose courses
+            </li>
          </ul>
          {/**Error shown if schedule's name is empty */}
          {isEmpty && (
