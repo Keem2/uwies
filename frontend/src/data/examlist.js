@@ -4,5 +4,3 @@ import examlist from "./examlist_clean.json" assert { type: "json" };
 const result = Object.groupBy(examlist, ({ date }) => date);
 
 export default result;
-
-console.log("right");
