@@ -1,0 +1,506 @@
+date,time,course,description,hours,room,location
+12/04/2023,9:00 am,ACCT1003,Introduction to Management and Cost Accounting (AGARD - HUNTE),2 hours,LR14,SAGICOR BUILDING
+12/04/2023,9:00 am,ACCT1003,Introduction to Management and Cost Accounting (HURDLE - ROBERTSON-LEWIS),2 hours,LR13,SAGICOR BUILDING
+12/04/2023,9:00 am,ACCT1003,Introduction to Management and Cost Accounting (ROWE - WORRELL),2 hours,LR6,CLICO BUILDING
+12/04/2023,9:00 am,ACCT2017,Management Accounting I (ABSALOM- DEVONISH),2 hours,LR8,CLICO BUILDING
+12/04/2023,9:00 am,ACCT2017,Management Accounting I (DOS SANTOS - MORRIS),2 hours,LR9,CLICO BUILDING
+12/04/2023,9:00 am,ACCT2017,Management Accounting I (MURRAY - YOUNG),2 hours,LR7,CLICO BUILDING
+12/04/2023,9:00 am,COMP6304,"Information Security, Ethics and Legal",3 hours,LR6,CLICO BUILDING
+12/04/2023,9:00 am,COSY6020,Ethical and Legal Issues in Counselling,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,EDCL6000,School Counselling: Guidance Programmes and Professional Knowledge,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,EGOV6020,E-Governance for Development,3 hours,LR4,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,HRNM0103,Industrial Relations,3 hours,LR4,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,MGMT6901,Research Methods for Business,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,MISY6010,Information Systems to Strategic Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,MISY6020,Information Systems (Cyber) Security & Management,3 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,NURS6401,Nursing and Health Information System,3 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,PBHE6015,Social and Behavioural Science,3 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,PBHE6510,Leadership in Public Health,3 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,PSYC6130,Ethical and Legal Issues in Psychol,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,PUBH6001,"Research Methods 1, MONA STUDENTS ONLY",3 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,SPSC6902,Research Methods,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,9:00 am,THEO6323,The Wisdom Literature,3 hours,LR4,ROY MARSHALL BUILDING
+12/04/2023,1:00 pm,CHEM3167,Advanced Inorganic Chemistry,2 hours,PLD,PHYSICS LAB DOWN
+12/04/2023,1:00 pm,CLTR2500,Intro to Caribbean Cultural Studies,2 hours,PLU,PHYSICS LAB UP
+12/04/2023,1:00 pm,MGMT3037,International Business Management,2 hours,PLD,PHYSICS LAB DOWN
+12/04/2023,1:00 pm,SPSC3005,Sport in the Global Market Place,2 hours,PLU,PHYSICS LAB UP
+12/04/2023,1:00 pm,THEO3318,Caribbean Theology,2 hours,PLU,PHYSICS LAB UP
+12/04/2023,4:00 pm,ACCT3043,Auditing I (ALBERT - MCCLEAN),2 hours,LR14,SAGICOR BUILDING
+12/04/2023,4:00 pm,ACCT3043,Auditing I (MILLER - WORRELL),2 hours,LR13,SAGICOR BUILDING
+12/04/2023,4:00 pm,ECON3019,Transport Economics and Management,2 hours,LR8,CLICO BUILDING
+12/04/2023,4:00 pm,EDSE3901,Education of Children with Physical & Health Impairment,2 hours,LR7,CLICO BUILDING
+12/04/2023,4:00 pm,HESC1010,Fundamentals of Nutrition,2 hours,PLD,PHYSICS LAB DOWN
+12/04/2023,4:00 pm,HIST3030,The Evolution of Social Policy in Barbados,2 hours,LR7,CLICO BUILDING
+12/04/2023,4:00 pm,HIST3301,The Rise and Fall of Apartheid,2 hours,LR7,CLICO BUILDING
+12/04/2023,4:00 pm,HNDT2001,Introduction to Food Science,2 hours,PLD,PHYSICS LAB DOWN
+12/04/2023,4:00 pm,LAW2510,Jurisprudence (ABAN - LAING),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/04/2023,4:00 pm,LAW2510,Jurisprudence (LASHLEY - WRIGHT),2 hours,LR3,ROY MARSHALL BUILDING
+12/04/2023,4:00 pm,LITS3005,Contemporary Poetry,2 hours,LR7,CLICO BUILDING
+12/04/2023,4:00 pm,MDSC2103,The Cardiovascular System - Unit II,2 hours,PLD,PHYSICS LAB DOWN
+12/04/2023,4:00 pm,MGMT3063,Labour and Employment Law,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/04/2023,4:00 pm,MGMT3215,Project Management Methodologies,2 hours,LR8,CLICO BUILDING
+12/04/2023,4:00 pm,MUSC1025,Introduction to Harmony,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/04/2023,4:00 pm,PHIL2904,Philosophical Logic,2 hours,LR7,CLICO BUILDING
+12/04/2023,4:00 pm,SOWK3034,Children and Family Services,2 hours,LR8,CLICO BUILDING
+12/05/2023,9:00 am,ACCT6010,Accounting for Managerial Decision,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,ACCT6027,Portfolio Management and Wealth Planning,3 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,EDEP6001,Caribbean Ideologies and Policies in Education Reform,3 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,EGOV6090,Project Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,FINA6110,Investment Analysis and Portfolio Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,GEMA6104,Accounting for Decision Making,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,HRNM6002,Financial Management & Accounting,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,HRNM6110,Human Resource Development,3 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,HRNM6111,Strategic Human Resource Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,IMGT6218,International Business Environment,3 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,INBA6045,Strategic HR Mgmt,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,LAW6200,The Management of Intellectual Property,3 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,MKTG2001,Principes of Marketing (AANENSEN - GAILLARD),2 hours,LR7,CLICO BUILDING
+12/05/2023,9:00 am,MKTG2001,Principes of Marketing (HURDLE - SMALL),2 hours,LR8,CLICO BUILDING
+12/05/2023,9:00 am,MKTG2001,Principes of Marketing (SMITH - ZAMORE),2 hours,LR9,CLICO BUILDING
+12/05/2023,9:00 am,MKTG6010,Consumer Behaviour,3 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,PSYC3017,Contemporary Personality Theories & Assessment,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/05/2023,9:00 am,PTMT6004,Financial Management and Project Financing,3 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,SBCO6211,Finance and Management Accounting,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,9:00 am,THEO1001,Introduction to Old Testament Literature,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/05/2023,1:00 pm,ACCT2014,Financial Accounting I,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,1:00 pm,COMP3385,Framework Design for Advanced Web Developments,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/05/2023,1:00 pm,LAW3630,Caribbean Integration Law,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/05/2023,1:00 pm,LING3201,Caribbean Dialectology,2 hours,S6,SOCIAL SCIENCES
+12/05/2023,1:00 pm,LITS2101,Novel I: The Rise of the Novel,2 hours,S6,SOCIAL SCIENCES
+12/05/2023,1:00 pm,MDSC1301,Behavioural Medicine,2 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,1:00 pm,MENG6402,"Human Resource Management 1, ST. AUGUSTINE STUDENTS ONLY",2 hours,S7,SOCIAL SCIENCES
+12/05/2023,1:00 pm,MGMT2026,Production and Operations Management (ALEXANDER - GRAHAM),2 hours,PLD,PHYSICS LAB DOWN
+12/05/2023,1:00 pm,MGMT2026,Production and Operations Management (GRANT - NEWSAM),2 hours,PLU,PHYSICS LAB UP
+12/05/2023,1:00 pm,MGMT2026,Production and Operations Management (OUTRAM - YARDE),2 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,1:00 pm,MGMT3005,Attractions Development and Management,2 hours,S6,SOCIAL SCIENCES
+12/05/2023,1:00 pm,SOWK2000,Social Work Theory and Practice with Groups,2 hours,S7,SOCIAL SCIENCES
+12/05/2023,4:00 pm,BIOC3370,Basis of Human Disease,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,BIOL2166,Advanced Genetics I,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,CHEM3218,Environmental Chemistry and Toxicology,2 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,CLTR3103,Black Popular Culture,2 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,ECOL3460,Biology and Ecology of Coral Reefs,2 hours,LR3,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,EDPS3804,Principles of Social Psychology,2 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,ELET2215,Microprocessor Systems,2 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,FOUN1006,Exposition for Academic Purposes (ABSALOM - CHAN),2 hours,LR6,CLICO BUILDING
+12/05/2023,4:00 pm,FOUN1006,Exposition for Academic Purposes (CHANDLER - HAYNES),2 hours,LR7,CLICO BUILDING
+12/05/2023,4:00 pm,FOUN1006,Exposition for Academic Purposes (HEE CHUNG - PILGRIM),2 hours,LR8,CLICO BUILDING
+12/05/2023,4:00 pm,FOUN1006,Exposition for Academic Purposes (PITCHER - YOUTH),2 hours,LR9,CLICO BUILDING
+12/05/2023,4:00 pm,METE2125,Dynamic Meteorology,2 hours,LR10,CLICO BUILDING
+12/05/2023,4:00 pm,METE3420,Radar Meteorology,2 hours,LR4,ROY MARSHALL BUILDING
+12/05/2023,4:00 pm,TOUR2002,Transportation and Travel,2 hours,LR10,CLICO BUILDING
+12/06/2023,9:00 am,ACCT1002,Introduction to Financial Accounting (AGARD - FEDEE),2 hours,LR14,SAGICOR BUILDING
+12/06/2023,9:00 am,ACCT1002,Introduction to Financial Accounting (FORDE - HOLDER),2 hours,LR13,SAGICOR BUILDING
+12/06/2023,9:00 am,ACCT1002,Introduction to Financial Accounting (HOLLIGAN - MCDONALD),2 hours,LR6,CLICO BUILDING
+12/06/2023,9:00 am,ACCT1002,Introduction to Financial Accounting (MEDFORD - SEALY),2 hours,LR7,CLICO BUILDING
+12/06/2023,9:00 am,ACCT1002,Introduction to Financial Accounting (SEIFERT - YEARWOOD),2 hours,LR8,CLICO BUILDING
+12/06/2023,9:00 am,CHEM0615,Preliminary Chemistry I,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,FINA6005,Computational Finance,3 hours,LR3,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,GEND6100,Contemporary Feminist Theorising,3 hours,LR3,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,GOVT3017,Caribbean Government and Politics I,2 hours,LR9,CLICO BUILDING
+12/06/2023,9:00 am,GOVT3077,Caribbean Regionalism and World Affairs,2 hours,LR9,CLICO BUILDING
+12/06/2023,9:00 am,IMGT6229,International Entrepreneurship and Global Innovation,3 hours,LR3,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,INBA6011,International Business,3 hours,LR4,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,LAW6470,Advanced Intellectual Property Law,3 hours,LR4,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,LIBS6001,Foundations of Library and Information Studies MONA STUDENTS ONLY,3 hours,LR4,ROY MARSHALL BUILDING
+12/06/2023,9:00 am,SPSC6005,Advanced Sociology of Sports,3 hours,LR3,ROY MARSHALL BUILDING
+12/06/2023,1:00 pm,FOUN1004,An Introduction to Argument (ABEL - JOSEPH),2 hours,PLD,PHYSICS LAB DOWN
+12/06/2023,1:00 pm,FOUN1004,An Introduction to Argument (JULIEN - YEARWOOD),2 hours,PLU,PHYSICS LAB UP
+12/06/2023,1:00 pm,LING2001,Phonology,2 hours,S6,SOCIAL SCIENCES
+12/06/2023,1:00 pm,THEO1203,Fundamentals of Christian Ministry,2 hours,S6,SOCIAL SCIENCES
+12/06/2023,4:00 pm,COMP1215,UNIX,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/06/2023,4:00 pm,EDFA1024,The Social Foundations of Education,2 hours,LR12,SAGICOR BUILDING
+12/06/2023,4:00 pm,GOVT1000,Introduction to Political Institutions Analysis,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/06/2023,4:00 pm,LAW2310,"Public International Law 1, MONA STUDENTS ONLY",2 hours,LR13,SAGICOR BUILDING
+12/06/2023,4:00 pm,MATH2304,Multivariable Calculus,2 hours,LR13,SAGICOR BUILDING
+12/06/2023,4:00 pm,METE1110,Introduction to Oceans and Climate,2 hours,LR6,CLICO BUILDING
+12/06/2023,4:00 pm,METE3210,Advanced Synoptic Meteorology,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/06/2023,4:00 pm,MGMT2023,Financial Management I (AGARD - DEVONISH),2 hours,LR7,CLICO BUILDING
+12/06/2023,4:00 pm,MGMT2023,Financial Management I (DAIS - LYTE),2 hours,LR8,CLICO BUILDING
+12/06/2023,4:00 pm,MGMT2023,Financial Management I (MARSHALL - THORPE),2 hours,LR9,CLICO BUILDING
+12/06/2023,4:00 pm,MGMT2023,Financial Management I (TROTMAN - YARDE-ST.HILAIRE),2 hours,LR10,CLICO BUILDING
+12/06/2023,4:00 pm,MICR3266,Ecology of Micro-organisms,2 hours,LR6,CLICO BUILDING
+12/06/2023,4:00 pm,PHIL2200,Crime & Punishment - Issues in Legal Justice,2 hours,LR10,CLICO BUILDING
+12/06/2023,4:00 pm,PHYS1200,Physics I: Mechanics of Translation Motion,2 hours,LR13,SAGICOR BUILDING
+12/06/2023,4:00 pm,SOCI3026,Sociology of Development II,2 hours,LR11,CLICO BUILDING
+12/06/2023,4:00 pm,SOWK1001,Introduction to Social Work,2 hours,LR11,CLICO BUILDING
+12/06/2023,4:00 pm,SPSC2025,Sport Law,2 hours,LR4,ROY MARSHALL BUILDING
+12/06/2023,4:00 pm,SPSC3000,Human Resource Management in Sports,2 hours,LR4,ROY MARSHALL BUILDING
+12/06/2023,4:00 pm,SPSC3012,Introduction to Sports Coaching,2 hours,LR12,SAGICOR BUILDING
+12/07/2023,9:00 am,ACCT6035,International Tax,3 hours,MSR1&2,MANAGEMENT STUDIES
+12/07/2023,9:00 am,BIOL1020,Diversity of Life I (ABAN - KNIGHT),2 hours,LR14,SAGICOR BUILDING
+12/07/2023,9:00 am,BIOL1020,Diversity of Life I (LASHLEY - YARDE),2 hours,LR13,SAGICOR BUILDING
+12/07/2023,9:00 am,COMP0001,Preliminary Computer Science I,2 hours,PLD,PHYSICS LAB DOWN
+12/07/2023,9:00 am,FINA6001,Behavioural Finance,3 hours,MSR1&2,MANAGEMENT STUDIES
+12/07/2023,9:00 am,GEND2501,"Women, Leadership and Change in Developing Countries",2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,9:00 am,GEOL1101,"Earth Science 1: Earth Materials and Plate Tectonics, MONA STUDENTS ONLY",2 hours,PLD,PHYSICS LAB DOWN
+12/07/2023,9:00 am,LAW6540,Investor-State Arbitration,3 hours,MSR1&2,MANAGEMENT STUDIES
+12/07/2023,9:00 am,MGMT3004,Management of Quality,2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,9:00 am,MGMT3024,Business Communications (AGARD - TOPPIN),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/07/2023,9:00 am,MGMT3024,Business Communications (TROTMAN - YARDE),2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,9:00 am,MGMT3091,Creativity and Innovation Management for Entrepreneurship,2 hours,PLD,PHYSICS LAB DOWN
+12/07/2023,1:00 pm,LAW3645,Commonwealth Caribbean Sports Law,2 hours,LR4,ROY MARSHALL BUILDING
+12/07/2023,1:00 pm,MENG6700,"Strategic Asset Management, ST. AUGUSTINE STUDENTS ONLY",2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,1:00 pm,MGMT3049,Financial Institutions and Markets (ABSALOM - LEWIS),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/07/2023,1:00 pm,MGMT3049,Financial Institutions and Markets (LINTON - YEARWOOD),2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,4:00 pm,ECON2025,Statistical Methods I,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/07/2023,4:00 pm,EDRS2201,Introduction to Research Methods in Education,2 hours,LR3,ROY MARSHALL BUILDING
+12/07/2023,4:00 pm,FOUN1301,"Law, Governance, Society and Economy in the Caribbean (ALI - MILLINGTON)",2 hours,LR14,SAGICOR BUILDING
+12/07/2023,4:00 pm,FOUN1301,"Law, Governance, Society and Economy in the Caribbean (MORRIS - YOUNG)",2 hours,LR13,SAGICOR BUILDING
+12/07/2023,4:00 pm,HIST3304,Liberation Struggle in Twentieth Century Africa,2 hours,S7,SOCIAL SCIENCES
+12/07/2023,4:00 pm,PSYC1008,Intro to Sports Psychology,2 hours,LR4,ROY MARSHALL BUILDING
+12/07/2023,4:00 pm,PSYC3066,Psychology of Human Spirituality: A Transpersonal Approach,2 hours,S7,SOCIAL SCIENCES
+12/07/2023,4:00 pm,SOCI2006,Qualitative Methods in Sociological Research (ABSALOM - HINDS),2 hours,LR7,CLICO BUILDING
+12/07/2023,4:00 pm,SOCI2006,Qualitative Methods in Sociological Research (HOLDER - WORRELL),2 hours,LR8,CLICO BUILDING
+12/07/2023,4:00 pm,TOUR3000,Tourism Management,2 hours,S6,SOCIAL SCIENCES
+12/08/2023,9:00 am,ACCT6019,Multi Jurisdictional Tax Planning,3 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,BIOL1025,Diversity of Life II (ABAN - RILEY),2 hours,LR14,SAGICOR BUILDING
+12/08/2023,9:00 am,BIOL1025,Diversity of Life II (ROACH - WOODROFFE),2 hours,LR13,SAGICOR BUILDING
+12/08/2023,9:00 am,ECON6044,Financial Markets and Institutions,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,IMCC6160,"Advertising, Media Analysis and Planning, MONA STUDENTS ONLY",3 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,LAW6600,Advanced Caribbean Integration Law,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,LGSC6003,Operations Research I,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,PBHE6300,Family Health I,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,PBHE6500,Primary Health Care,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,PENU6003,Care of the Sick Child 1,3 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,PSYC6220,Psychometrics I: Intellectual and Cognitive Abilities,3 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,9:00 am,THEO1013,Ancient Greek and Early Roman Philosophy,2 hours,LR13,SAGICOR BUILDING
+12/08/2023,9:00 am,THEO2025,The Canonical Gospels,2 hours,LR13,SAGICOR BUILDING
+12/08/2023,1:00 pm,ENSC3005,Urban Geomorphology,2 hours,S6,SOCIAL SCIENCES
+12/08/2023,1:00 pm,HIST1703,Introduction to History,2 hours,S6,SOCIAL SCIENCES
+12/08/2023,1:00 pm,MATH1190,Calculus A (ALLEN - BRATHWAITE),2 hours,PLD*,PHYSICS LAB DOWN
+12/08/2023,1:00 pm,MATH1190,Calculus A (BROWNE - YEARWOOD),2 hours,PLU,PHYSICS LAB UP
+12/08/2023,1:00 pm,MENG6701,"Asset Maintenance Technologies, ST. AUGUSTINE STUDENTS ONLY",2 hours,S6,SOCIAL SCIENCES
+12/08/2023,1:00 pm,MGMT2008,Organisational Behaviour (ALLEYNE - CHOTHIA),2 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,1:00 pm,MGMT2008,Organisational Behaviour (CLARKE to KING-BABB),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,1:00 pm,MGMT2008,Organisational Behaviour (KISSUN - PREMPEH),2 hours,PLD*,PHYSICS LAB DOWN
+12/08/2023,1:00 pm,MGMT2008,Organisational Behaviour (PRESCOD - ZAMORE),2 hours,LR4,ROY MARSHALL BUILDING
+12/08/2023,2:00 pm,LIBS6901,"Trends & Issues in Library & Information Work, MONA STUDENTS ONLY",3 hours,S7,SOCIAL SCIENCES
+12/08/2023,4:00 pm,ECON0101,Preliminary Mathematics for Social Sciences,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/08/2023,4:00 pm,HIST1004,Introductory History of the Caribbean,2 hours,PLD,PHYSICS LAB DOWN
+12/08/2023,4:00 pm,HNDT3002,Nutrition Counselling and Communication Skills,2 hours,LR13,SAGICOR BUILDING
+12/08/2023,4:00 pm,LAW2010,Law of Torts II,2 hours,LR14,SAGICOR BUILDING
+12/08/2023,4:00 pm,LAW3850,Public Law Remedies,2 hours,LR13,SAGICOR BUILDING
+12/08/2023,4:00 pm,MGMT3017,Human Resources Management,2 hours,LR11,CLICO BUILDING
+12/08/2023,4:00 pm,MUSC1010,Introduction to Critical Listening,2 hours,TSR8,SAGICOR BUILDING
+12/08/2023,4:00 pm,PHIL3110,Environmental Ethics,2 hours,PLD,PHYSICS LAB DOWN
+12/08/2023,4:00 pm,SOCI3012,Caribbean Social Planning,2 hours,LR3,ROY MARSHALL BUILDING
+12/08/2023,4:00 pm,SWEN1002,Computing in Society,2 hours,LR4,ROY MARSHALL BUILDING
+12/08/2023,4:00 pm,SWEN2006,Discrete Mathematics for Software Engineers,2 hours,LR13,SAGICOR BUILDING
+12/08/2023,4:00 pm,THEA1000,Introduction to Theatre,2 hours,LR4,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,ACCT6032,Advanced Audit and Assurance,3 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,EDLS6401,Language and Literacy Development and Instruction,3 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,LAW2010,"Law of Torts 2, MONA STUDENTS ONLY",2 hours,S6,SOCIAL SCIENCES
+12/11/2023,9:00 am,LAW6010,Banking Law,3 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,MDSC3101,Clinical Haematology,2 hours,S6,SOCIAL SCIENCES
+12/11/2023,9:00 am,PHYS0070,Preliminary Physics I,3 hours,LR4,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,PHYS3485,Theory of Statistical Mechanics,2 hours,PLD,PHYSICS LAB DOWN
+12/11/2023,9:00 am,SBCO6100,"Transformational Leadership and Management, MONA STUDENTS ONLY",3 hours,LR4,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,SBMA6025,Pricing Strategy,3 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,9:00 am,SPPT6106,"Exercise in Specific Condition, MONA STUDENTS ONLY",2 hours,S6,SOCIAL SCIENCES
+12/11/2023,9:00 am,SWEN1004,Mathematics for Software Engineers,2 hours,PLD,PHYSICS LAB DOWN
+12/11/2023,9:00 am,SWEN2004,Computer Organisation,2 hours,S6,SOCIAL SCIENCES
+12/11/2023,9:00 am,THEO2404,Comparative Religion,2 hours,PLD,PHYSICS LAB DOWN
+12/11/2023,9:00 am,THEO3214,Ascetical Theology,2 hours,PLD,PHYSICS LAB DOWN
+12/11/2023,1:00 pm,CLTR2000,Thinking Culture: Debates and Perspectives,2 hours,S6,SOCIAL SCIENCES
+12/11/2023,1:00 pm,ECOL3463,Tropic Crop Ecology,2 hours,S6,SOCIAL SCIENCES
+12/11/2023,1:00 pm,GEOL1102,"Earth Science 2: Earth Processes and Earth History, MONA STUDENTS ONLY",2 hours,S6,SOCIAL SCIENCES
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (ABDOOL - BROME),2 hours,PLD,PHYSICS LAB DOWN
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (BROWN - EDGHILL),2 hours,MSR1&2,MANAGEMENT STUDIES
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (EDWARDS - HARVEY),2 hours,PLU,PHYSICS LAB UP
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (HAYNES - LOPEZ),2 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (LORD - PRESCOD),2 hours,LR4,ROY MARSHALL BUILDING
+12/11/2023,1:00 pm,MGMT1001,Introduction to Management (PRICE - YEARWOOD),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/11/2023,2:00 pm,AHAC5101,"Introduction to Adolescent Health, MONA STUDENTS ONLY",3 hours,S7,SOCIAL SCIENCES
+12/11/2023,4:00 pm,COMP2225,Software Engineering,2 hours,LR7,CLICO BUILDING
+12/11/2023,4:00 pm,ECON3029,Labour Economics,2 hours,LR4,ROY MARSHALL BUILDING
+12/11/2023,4:00 pm,EDME2211,"Testing, Measurement and Evaluation I",2 hours,LR1&2,ROY MARSHALL BUILDING
+12/11/2023,4:00 pm,LAW3110,Company Law,2 hours,LR14,SAGICOR BUILDING
+12/11/2023,4:00 pm,MGMT2224,Introduction to Entrepreneurship,2 hours,LR11,CLICO BUILDING
+12/11/2023,4:00 pm,SOCI2000,Classical Social Theory,2 hours,LR3,ROY MARSHALL BUILDING
+12/11/2023,4:00 pm,SOCI3036,Criminology II: Police and Society,2 hours,LR4,ROY MARSHALL BUILDING
+12/12/2023,9:00 am,ACCT6030,Advanced Financial Management,3 hours,S6,SOCIAL SCIENCES
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (ABSALOM - CORBIN),2 hours,LR14,SAGICOR BUILDING
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (COWARD - GOODING),2 hours,LR13,SAGICOR BUILDING
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (GRAHAM - HUNTE),2 hours,LR6,CLICO BUILDING
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (HURDLE - MITCHELL),2 hours,LR7,CLICO BUILDING
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (MONIALL - SIMON),2 hours,LR8,CLICO BUILDING
+12/12/2023,9:00 am,ECON1001,Introduction to Microeconomics (SKINNER - YOUNG),2 hours,LR9,CLICO BUILDING
+12/12/2023,9:00 am,EDSC6613,Learning and Teaching In Science,3 hours,S6,SOCIAL SCIENCES
+12/12/2023,9:00 am,LIBS6106,"Management of Libraries and Information Units, MONA STUDENTS ONLY",3 hours,S6,SOCIAL SCIENCES
+12/12/2023,9:00 am,SPSF6001,"Upper Body Injuries, MONA STUDENTS ONLY",3 hours,S6,SOCIAL SCIENCES
+12/12/2023,1:00 pm,HESC3003,Environmental Health,2 hours,LR3,ROY MARSHALL BUILDING
+12/12/2023,1:00 pm,HUMN1001,Critical Foundation in Arts,2 hours,LR3,ROY MARSHALL BUILDING
+12/12/2023,1:00 pm,SPSC3009,Sport Policy and Development,2 hours,LR4,ROY MARSHALL BUILDING
+12/12/2023,1:00 pm,SWEN1000,An Introduction to Computing I,2 hours,LR4,ROY MARSHALL BUILDING
+12/12/2023,2:00 pm,AHAC5102,"Public Health Policy in the Caribbean, MONA STUDENTS ONLY",3 hours,MSSR1,MANAGEMENT STUDIES
+12/12/2023,4:00 pm,ACCT2019,Accounting for Managers,2 hours,LR4,ROY MARSHALL BUILDING
+12/12/2023,4:00 pm,ECON3049,Econometrics I,2 hours,LR3,ROY MARSHALL BUILDING
+12/12/2023,4:00 pm,ELET1220,Introduction to Electronics,2 hours,PLD,PHYSICS LAB DOWN
+12/12/2023,4:00 pm,GOVT2062,Introduction to International Security,2 hours,LR6,CLICO BUILDING
+12/12/2023,4:00 pm,HIST2003,"History of the West Indies I, 1700",2 hours,LR3,ROY MARSHALL BUILDING
+12/12/2023,4:00 pm,LAW2110,Law of Contract II,2 hours,LR14,SAGICOR BUILDING
+12/12/2023,4:00 pm,LAW3840,Alternative Disputes Resolution,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/12/2023,4:00 pm,MICR2260,Essential Microbiology,2 hours,LR10,CLICO BUILDING
+12/12/2023,4:00 pm,PSYC1003,Introduction to Psychology (ADAMS - BOYCE),2 hours,LR6,CLICO BUILDING
+12/12/2023,4:00 pm,PSYC1003,Introduction to Psychology (BRATHWAITE - HACKETT),2 hours,LR7,CLICO BUILDING
+12/12/2023,4:00 pm,PSYC1003,Introduction to Psychology (HALL - ODLE),2 hours,LR8,CLICO BUILDING
+12/12/2023,4:00 pm,PSYC1003,Introduction to Psychology (OGUNKOLA - YEARWOOD),2 hours,LR9,CLICO BUILDING
+12/12/2023,4:00 pm,PSYC2004,Personality Psychology,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,ACCT6029,Strategic Business Leader,3 hours,LR3,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,BUAD6003,"Marketing Management, ST. AUGUSTINE STUDENTS ONLY",3 hours,LR3,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,ECON6030,Microeconomic Theory,3 hours,LR3,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,EDSC6704,Trends in Curriculum Development in Science & Technology Education,3 hours,LR3,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,LAER6002,Caribbean and International Labour,3 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,PBHE6100,Biostatistics,3 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,9:00 am,THEO2115,History of the Church from the Reformation to the Present,2 hours,S6,SOCIAL SCIENCES
+12/13/2023,9:00 am,THEO3004,Theology of Deuteronomy and the Deuteronomic History,2 hours,S6,SOCIAL SCIENCES
+12/13/2023,9:00 am,TOUR6030,Tourism Destination Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,1:00 pm,CHEM2705,Intermediate Organic Chemistry,2 hours,PLU,PHYSICS LAB UP
+12/13/2023,1:00 pm,MGMT2021,Business Law I (AGARD - LINTON),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/13/2023,1:00 pm,MGMT2021,Business Law I (LOWE - ZAMORE),2 hours,PLD,PHYSICS LAB DOWN
+12/13/2023,4:00 pm,CHEM1110,Introduction to Organic Chemistry,2 hours,LR14,SAGICOR BUILDING
+12/13/2023,4:00 pm,COMP2611,Data Structures,2 hours,LR6,CLICO BUILDING
+12/13/2023,4:00 pm,ECOL3461,Ecology of a Changing Planet,2 hours,LR13,SAGICOR BUILDING
+12/13/2023,4:00 pm,EDPS1001,Introduction to Human Development,2 hours,LR3,ROY MARSHALL BUILDING
+12/13/2023,4:00 pm,ELET1205,Computer Aided Design,2 hours,LR9,CLICO BUILDING
+12/13/2023,4:00 pm,ELET1210,Digital Electronics I,2 hours,LR10,CLICO BUILDING
+12/13/2023,4:00 pm,FINA2005,Risk Analysis and Management,2 hours,PLD,PHYSICS LAB DOWN
+12/13/2023,4:00 pm,HIST2602,Imperialism since 1918,2 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,4:00 pm,LAW3760,Intellectual Property,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/13/2023,4:00 pm,PHIL3510,Philosophy of Sex and Love,2 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,4:00 pm,PHYS2410,Modern Physics,2 hours,LR10,CLICO BUILDING
+12/13/2023,4:00 pm,SOCI1000,Introduction to Sociology II (ALEXANDER - GRIFFITH),2 hours,LR7,CLICO BUILDING
+12/13/2023,4:00 pm,SOCI1000,Introduction to Sociology II (GUNN - SOBERS),2 hours,LR8,CLICO BUILDING
+12/13/2023,4:00 pm,SOCI1000,Introduction to Sociology II (SOUDATT - YOUNG),2 hours,LR9,CLICO BUILDING
+12/13/2023,4:00 pm,SOCI3027,Gender and Development,2 hours,LR4,ROY MARSHALL BUILDING
+12/13/2023,4:00 pm,SOWK1000,Human Behaviour,2 hours,LR13,SAGICOR BUILDING
+12/13/2023,4:00 pm,SOWK3031,Bio-Psychosocial Challenges of HIV/ AIDS,2 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,ACCT6028,Strategic Business Reporting,3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,AGLS6001,"Tropical Animal Science, ST. AUGUSTINE  STUDENTS ONLY",3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,COMP3330,Database Management Systems I,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/14/2023,9:00 am,EDCU6310,"Curriculum Policy and Planning, MONA STUDENTS ONLY",3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,EDLE6000,Fundamentals of Educational Administration & Organisational Behaviour,3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,ENSC2005,Earth-Life Cycles,2 hours,LR3,ROY MARSHALL BUILDING
+12/14/2023,9:00 am,LAW2210,"Real Property 1, MONA STUDENTS ONLY",2 hours,LR1&2,ROY MARSHALL BUILDING
+12/14/2023,9:00 am,LAW6201,Copyright Law (The Protection of Creative Assets),3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,MATH0100,Pre-Calculus,3 hours,LR14,SAGICOR BUILDING
+12/14/2023,9:00 am,SPSF6004,"Exercise Physiology, MONA STUDENTS ONLY",3 hours,LR13,SAGICOR BUILDING
+12/14/2023,9:00 am,THEO1115,History of the Early Church to the Medieval Period: The First to the Fifteenth Century,2 hours,LR3,ROY MARSHALL BUILDING
+12/14/2023,9:00 am,THEO2228,Baptism and the Eucharist,2 hours,LR3,ROY MARSHALL BUILDING
+12/14/2023,1:00 pm,MGMT2012,Quantitative Methods (AGARD - HACKETT),2 hours,LR4,ROY MARSHALL BUILDING
+12/14/2023,1:00 pm,MGMT2012,Quantitative Methods (HALL - WOODROFFE),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/14/2023,2:00 pm,AHAC5103,"Sexuality and Behaviour, MONA STUDENTS ONLY",3 hours,MSSR1,MANAGEMENT STUDIES
+12/14/2023,4:00 pm,BIOC3265,Principles of Bioinformatics,2 hours,LR7,CLICO BUILDING
+12/14/2023,4:00 pm,CHEM2700,Intermediate Inorganic Chemistry,2 hours,LR7,CLICO BUILDING
+12/14/2023,4:00 pm,COMP2235,Networks I,2 hours,PLU,PHYSICS LAB UP
+12/14/2023,4:00 pm,COMP3360,Networks II,2 hours,PLD,PHYSICS LAB DOWN
+12/14/2023,4:00 pm,ECOL2461,Caribbean Island Biodiversity,2 hours,LR8,CLICO BUILDING
+12/14/2023,4:00 pm,ECON2000,Intermediate Micro-Economics I,2 hours,LR11,CLICO BUILDING
+12/14/2023,4:00 pm,FOUN1301,"Law, Governance, Economy and Society in the Caribbean, MONA STUDENTS ONLY",2 hours,LR9,CLICO BUILDING
+12/14/2023,4:00 pm,GOVT2010,Politics of Developing Nations,2 hours,LR6,CLICO BUILDING
+12/14/2023,4:00 pm,GOVT3076,International Development in Global Politics,2 hours,LR6,CLICO BUILDING
+12/14/2023,4:00 pm,LAW1010,Law and Legal Systems (ABEL - KNIGHT),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/14/2023,4:00 pm,LAW1010,Law and Legal Systems (LAMB - YARDE),2 hours,LR3,ROY MARSHALL BUILDING
+12/14/2023,4:00 pm,LAW3170,Law of Trusts,2 hours,LR9,CLICO BUILDING
+12/14/2023,4:00 pm,MATH1141,Introductory Linear Algebra and Analytical  Geometry,2 hours,LR8,CLICO BUILDING
+12/14/2023,4:00 pm,MGMT3027,Sports Marketing and Public Relations,2 hours,LR9,CLICO BUILDING
+12/14/2023,4:00 pm,PHIL1003,Introduction to Philosophy,2 hours,LR10,CLICO BUILDING
+12/14/2023,4:00 pm,PHYS3455,Lasers and Optical Systems,2 hours,PLD,PHYSICS LAB DOWN
+12/14/2023,4:00 pm,PSYC3014,Industrial and Organizational Psychology,2 hours,LR4,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,ACCT6037,Investment Analysis,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,BUAD6002,"Cost Accounting & Fin. Management, ST. AUGUSTINE STUDENTS ONLY",3 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,ECON2002,Intermediate Macro-Economics I,2 hours,LR11,CLICO BUILDING
+12/15/2023,9:00 am,ECON6050,Mathematical Methods,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,EDLE6001,Effective Leadership in Education,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,FOUN0100,Fundamentals of Written English (AGARD - NASH),2 hours,LR14,SAGICOR BUILDING
+12/15/2023,9:00 am,FOUN0100,Fundamentals of Written English (NICHOLLS - WORRELL),2 hours,LR13,SAGICOR BUILDING
+12/15/2023,9:00 am,LAER6003,Collective Bargaining and Disputes,3 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,PBHE6200,Epidemiology I,3 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,PENU6000,Theoretical Perspectives in Paediatric Nursing,3 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,SPKN6340,"Kinetics and Upper Body Sport Injuries, MONA STUDENTS ONLY",2 hours,LR11,CLICO BUILDING
+12/15/2023,9:00 am,SPSC6003,Sport Management and Marketing,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,9:00 am,THEO2203,Introduction to Pastoral Care and Counselling Pastoral Studies,2 hours,LR13,SAGICOR BUILDING
+12/15/2023,9:00 am,TOUR6130,Sports and Events Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,1:00 pm,LAW2210,Law of Real Property I (ABAN - RAMSEY),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,1:00 pm,LAW2210,Law of Real Property I (REEVES - WRIGHT),2 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,1:00 pm,MDSC1103,Introduction to General Embryology & Histology,2 hours,LR4,ROY MARSHALL BUILDING
+12/15/2023,1:00 pm,MICR3268,Microbial Pathogenesis,2 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,2:00 pm,LIBS6301,"Bibliography and Reference Methods and Materials, MONA STUDENTS ONLY",3 hours,MSSR1,MANAGEMENT STUDIES
+12/15/2023,4:00 pm,BIOL2370,Flowering Plant Physiology,2 hours,LR6,CLICO BUILDING
+12/15/2023,4:00 pm,COMP1180,Mathematics for Computer Science I,2 hours,LR14,SAGICOR BUILDING
+12/15/2023,4:00 pm,COMP3320,Design Principles of Operating Systems,2 hours,LR7,CLICO BUILDING
+12/15/2023,4:00 pm,EDEC2000,Fundamentals of Early Childhood Care and Education,2 hours,LR3,ROY MARSHALL BUILDING
+12/15/2023,4:00 pm,ELET2230,Digital Communication Systems I,2 hours,LR6,CLICO BUILDING
+12/15/2023,4:00 pm,FINA2003,Information Technology for Banking & Finance,2 hours,PLD,PHYSICS LAB DOWN
+12/15/2023,4:00 pm,GEND3701,Men and Masculinities in the Caribbean,2 hours,LR8,CLICO BUILDING
+12/15/2023,4:00 pm,HIST2610,History of Medicine in the Caribbean,2 hours,LR4,ROY MARSHALL BUILDING
+12/15/2023,4:00 pm,MATH3550,Real Analysis 2,2 hours,LR8,CLICO BUILDING
+12/15/2023,4:00 pm,METE2110,Atmospheric Thermodynamics,2 hours,LR6,CLICO BUILDING
+12/15/2023,4:00 pm,MGMT2020,Managerial Economics,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/15/2023,4:00 pm,PSYC3008,Elements of Counselling and Psychotherapy,2 hours,LR4,ROY MARSHALL BUILDING
+12/15/2023,4:00 pm,SOCI1001,Introduction to Social Research (ADAM - LEWIS),2 hours,LR11,CLICO BUILDING
+12/15/2023,4:00 pm,SOCI1001,Introduction to Social Research (LORDE - WORRELL),2 hours,LR13,SAGICOR BUILDING
+12/15/2023,4:00 pm,SPSC2020,Sociology of Sport,2 hours,LR8,CLICO BUILDING
+12/18/2023,9:00 am,ACCT6017,Quantitative Methods for Management,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,ECON1003,Mathematics for Social Sciences I (ABDOOL - GILL),2 hours,LR14,SAGICOR BUILDING
+12/18/2023,9:00 am,ECON1003,Mathematics for Social Sciences I (GLASGOW - JOHN),2 hours,LR13,SAGICOR BUILDING
+12/18/2023,9:00 am,ECON1003,Mathematics for Social Sciences I (JOHNNEY - MURRAY),2 hours,LR7,CLICO BUILDING
+12/18/2023,9:00 am,ECON1003,Mathematics for Social Sciences I (MURRELL - SMALL),2 hours,LR8,CLICO BUILDING
+12/18/2023,9:00 am,ECON1003,Mathematics for Social Sciences I (SOBERS - YEARWOOD),2 hours,LR9,CLICO BUILDING
+12/18/2023,9:00 am,EDME6201,Introduction to Educational Measurement,3 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,FINA6030,Quantitative Methods,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,GEMA6315,Quantitative Business Applications,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,INBA6010,Quantitative Business Analysis,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,LGSC6007,Production Management,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,MKTG6040,Services Marketing,3 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,PBHE6600,Environmental Health,3 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,PENU6002,Paediatric Health Assessment,3 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,SBCO6208,Quantitative Methods and Statistical Management,3 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,9:00 am,SPSC6009,Leadership and Human Resource Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,1:00 pm,COMP2232,Object-Oriented Programming Concepts,2 hours,PLD,PHYSICS LAB DOWN
+12/18/2023,1:00 pm,LAW1110,Criminal Law I (ABEL - LOVELL),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/18/2023,1:00 pm,LAW1110,Criminal Law I (LOWE - YARDE),2 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,1:00 pm,LAW3460,International Environmental Law,2 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,1:00 pm,LAW6300,Advanced Public International Law,3 hours,S6,SOCIAL SCIENCES
+12/18/2023,1:00 pm,LAW6350,Global Perspectives in Public Procurement,2 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,2:00 pm,AHAC5104,"Risk and Resiliency, MONA STUDENTS ONLY",3 hours,S7,SOCIAL SCIENCES
+12/18/2023,4:00 pm,CHEM3620,Advanced Physical Chemistry,2 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,CLTR1010,Intro to Caribbean Studies,2 hours,LR8,CLICO BUILDING
+12/18/2023,4:00 pm,COMP1210,Computing II,2 hours,LR6,CLICO BUILDING
+12/18/2023,4:00 pm,ECOL2460,Essentials of Ecology,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,ELET3230,Essentials of Digital Signal Processing (DSP),2 hours,LR7,CLICO BUILDING
+12/18/2023,4:00 pm,FINA3001,Caribbean Business Environment,2 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,GOVT3014,Theories and Concepts of International Politics,2 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,HESC3007,Nutrition Throughout the Life Cycle,2 hours,LR4,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,MATH2315,Linear Algebra 1,2 hours,LR7,CLICO BUILDING
+12/18/2023,4:00 pm,MATH3543,Abstract Algebra 2,2 hours,LR7,CLICO BUILDING
+12/18/2023,4:00 pm,METE1130,Introduction to Physical Meteorology,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,METE3110,Advanced Dynamic Meteorology,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,MKTG3000,Marketing Management,2 hours,LR14,SAGICOR BUILDING
+12/18/2023,4:00 pm,PHIL1002,Introduction to Ethics and Applied Ethics,2 hours,LR3,ROY MARSHALL BUILDING
+12/18/2023,4:00 pm,PHYS1205,"Physics II: Rotation, Waves and Thermodynamics",2 hours,LR7,CLICO BUILDING
+12/18/2023,4:00 pm,SPSC2012,Introduction to Philosophy of Sport,2 hours,LR8,CLICO BUILDING
+12/18/2023,4:00 pm,SWEN2003,Computer Networking and Security,2 hours,LR8,CLICO BUILDING
+12/19/2023,9:00 am,ACCT6012,Principles of Taxation for Business,3 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,ECON6036,International Business Economics,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,EDPS6310,Typical and Atypical Human Development,3 hours,LR3,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,FINA2001,Regulatory Environment of Banking and Finance,2 hours,LR14,SAGICOR BUILDING
+12/19/2023,9:00 am,HRNM6107,Human Resource Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,INBA6017,Economics for Int'l Business,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,LAER6000,Labour History,3 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,LAW2110,"Law of Contract 2, MONA STUDENTS ONLY",2 hours,LR14,SAGICOR BUILDING
+12/19/2023,9:00 am,LAW6525,Advanced International Commercial Arbitration,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,LGSC6002,Transportation Administration,3 hours,LR3,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,SBCO6205,Business in the Global Economy,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,SOWK6020,Professional Development and Ethical Issues in Human Services,3 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,9:00 am,TOUR6150,Human Resource Management,3 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,1:00 pm,LAW2310,Public International Law I (ABAN - MARTIN),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,1:00 pm,LAW2310,Public International Law I (MASON - WRIGHT),2 hours,LR3,ROY MARSHALL BUILDING
+12/19/2023,1:00 pm,MGMT3078,Policy Analysis,2 hours,PLD,PHYSICS LAB DOWN
+12/19/2023,1:00 pm,MKTG3002,Marketing Research,2 hours,PLD,PHYSICS LAB DOWN
+12/19/2023,1:00 pm,PHYS3450,Fluid Mechanics,2 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,1:00 pm,SPSC2015,Sport Nutrition,2 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,BIOC3260,Principles of Biotechnology,2 hours,LR6,CLICO BUILDING
+12/19/2023,4:00 pm,COMP1205,Computing I (ADDIE - LAMBERT),2 hours,LR14,SAGICOR BUILDING
+12/19/2023,4:00 pm,COMP1205,Computing I (LEON - YEARWOOD),2 hours,LR13,SAGICOR BUILDING
+12/19/2023,4:00 pm,COMP2210,Mathematics for Computer Science II,2 hours,LR11,CLICO BUILDING
+12/19/2023,4:00 pm,COMP3310,Algorithms,2 hours,PLD,PHYSICS LAB DOWN
+12/19/2023,4:00 pm,COMS1101,Introduction to Human Communication,2 hours,LR6,CLICO BUILDING
+12/19/2023,4:00 pm,COMS3000,Writing for the Mass Media: News Writing,2 hours,LR6,CLICO BUILDING
+12/19/2023,4:00 pm,ECON3034,Natural Resource and Environmental Economics,2 hours,LR10,CLICO BUILDING
+12/19/2023,4:00 pm,EDCU2101,"Introduction to Curriculum Theory, Planning and Practice",2 hours,PLU,PHYSICS LAB UP
+12/19/2023,4:00 pm,ENSC2000,Essentials of Oceanography,2 hours,LR7,CLICO BUILDING
+12/19/2023,4:00 pm,GOVT2016,Caribbean Political Philosophy,2 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,HESC3005,Statistics for Public Health,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,LAW3400,Insurance Law,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/19/2023,4:00 pm,LING1005,Introduction to Language,2 hours,LR10,CLICO BUILDING
+12/19/2023,4:00 pm,LING3103,The Teaching of English,2 hours,LR10,CLICO BUILDING
+12/19/2023,4:00 pm,MATH2305,Differential Equations,2 hours,LR7,CLICO BUILDING
+12/19/2023,4:00 pm,MDSC1201,Cell Biology,2 hours,LR3,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,MGMT2003,Property and Facilities Management,2 hours,LR10,CLICO BUILDING
+12/19/2023,4:00 pm,PHIL3130,Business Ethics,2 hours,PLU,PHYSICS LAB UP
+12/19/2023,4:00 pm,PSYC2026,Gender and Psychology,2 hours,LR4,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,SOCI3035,Caribbean Social Problems,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/19/2023,4:00 pm,SWEN2010,Beginner Chinese Language,2 hours,TSR8,SAGICOR BUILDING
+12/20/2023,9:00 am,ACCT6018,Legal & Ethical Environment for Wealth Management,3 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,ECON1005,Introduction to Statistics (AGARD - CAMPBELL),2 hours,LR6,CLICO BUILDING
+12/20/2023,9:00 am,ECON1005,Introduction to Statistics (ARRINGTON - HAYNES),2 hours,LR7,CLICO BUILDING
+12/20/2023,9:00 am,ECON1005,Introduction to Statistics (HENRY - PENISTON),2 hours,LR8,CLICO BUILDING
+12/20/2023,9:00 am,ECON1005,Introduction to Statistics (PHILLIPS - WORRELL),2 hours,LR9,CLICO BUILDING
+12/20/2023,9:00 am,EDPS6303,Cognition and Learning,3 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,EGOV6030,Legal and Ethical Issues in E-Governance,3 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,FINA6006,Ethical and Professional Standards,3 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,GEMA6340,Marketing Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,IMGT6225,Digital Business,3 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,LAW6130,Comparative Labour Law in a Corporate Environment,3 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,LAW6203,Patent Law (The Protection of Technology Assets),3 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,LGSC6001,Strategic Marketing,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,MKTG6000,Marketing Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,NURS6501,Policy and Ethical Issues in Nursing,3 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,PSYC2003,Foundations of Neuropsychology,2 hours,LR14,SAGICOR BUILDING
+12/20/2023,9:00 am,PSYC6110,Applied Research Design and Statistics,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,PTMT6031,Managing Procurements and Contracts,3 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,SBCO6212,Marketing Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,9:00 am,SPSC6006,Advanced Nutrition,3 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,1:00 pm,COMP1170,Entrepreneurship for Computer Scientists (ADDIE - MARTIN),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,1:00 pm,COMP1170,Entrepreneurship for Computer Scientists (MARTINDALE - YEARWOOD),2 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,1:00 pm,ECON2004,Economic Analysis for Public Policy,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/20/2023,1:00 pm,HNDT3001,Medical Nutrition Therapy I,2 hours,S6,SOCIAL SCIENCES
+12/20/2023,1:00 pm,LAW3210,Family Law I - Law Relating to Husband & Wife (ADAMS - MEADE),2 hours,PLD,PHYSICS LAB DOWN
+12/20/2023,1:00 pm,LAW3210,Family Law I - Law Relating to Husband & Wife (MOONIE - YEARWOOD),2 hours,PLU,PHYSICS LAB UP
+12/20/2023,1:00 pm,LING2101,Language Acquisition,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/20/2023,1:00 pm,LITS1001,Introduction to Poetry,2 hours,MSR1&2,MANAGEMENT STUDIES
+12/20/2023,1:00 pm,MDSC1105,The Locomotor System,2 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,1:00 pm,MGMT2027,Management in Government I,2 hours,S6,SOCIAL SCIENCES
+12/20/2023,1:00 pm,MGMT3231,International Entrepreneurship,2 hours,S6,SOCIAL SCIENCES
+12/20/2023,4:00 pm,ACCT3041,Advanced Financial Accounting,2 hours,LR1&2,ROY MARSHALL BUILDING
+12/20/2023,4:00 pm,BIOC2365,Primary Metabolism,2 hours,LR14,SAGICOR BUILDING
+12/20/2023,4:00 pm,CHEM3630,Methods in Instrumental Analysis,2 hours,LR6,CLICO BUILDING
+12/20/2023,4:00 pm,COMP2245,"Web Development Concepts, Tools and Practices",2 hours,LR13,SAGICOR BUILDING
+12/20/2023,4:00 pm,COMP3440,E-Commerce,2 hours,LR6,CLICO BUILDING
+12/20/2023,4:00 pm,EDTE3404,Issues in Teacher Education,2 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,4:00 pm,ELET3220,Control Systems,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,GEND1103,Basic Theoretical Concepts and Sources of Knowledge,2 hours,LR8,CLICO BUILDING
+12/20/2023,4:00 pm,GOVT3075,International Trade and Finance in Global Pol. Economics,2 hours,PLU,PHYSICS LAB UP
+12/20/2023,4:00 pm,HESC2002,Human Development and Behaviour,2 hours,PLD,PHYSICS LAB DOWN
+12/20/2023,4:00 pm,HIST1601,The Atlantic World 1400 - 1600,2 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,4:00 pm,HIST3103,Brazil in the 20th Century,2 hours,PLD,PHYSICS LAB DOWN
+12/20/2023,4:00 pm,HNDT1001,General Chemistry for Nutrition,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,LING1001,Introduction to Phonetics and Phonology,2 hours,PLD,PHYSICS LAB DOWN
+12/20/2023,4:00 pm,MDSC2104,The Digestive System,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,MKTG3010,Integrated Marketing Communications,2 hours,LR3,ROY MARSHALL BUILDING
+12/20/2023,4:00 pm,PHYS2400,Mathematical Methods in Physics I,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,PHYS3420,Electromagnetic Theory I,2 hours,PLD,PHYSICS LAB DOWN
+12/20/2023,4:00 pm,PSYC2012,Developmental Psychology,2 hours,LR11,CLICO BUILDING
+12/20/2023,4:00 pm,PSYC3028,Psychological Counselling Skills,2 hours,LR4,ROY MARSHALL BUILDING
+12/20/2023,4:00 pm,SPSC2000,Functional Anatomy,2 hours,LR8,CLICO BUILDING
+12/20/2023,4:00 pm,SPSC3003,Applied Sport Psychology,2 hours,LR8,CLICO BUILDING
+12/20/2023,4:00 pm,SWEN1009,An Introduction to Computing II,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,SWEN2001,An Introduction to Software Engineering,2 hours,LR7,CLICO BUILDING
+12/20/2023,4:00 pm,TOUR2000,International Tourism,2 hours,PLU,PHYSICS LAB DOWN
+12/21/2023,9:00 am,ACCT6011,Corporate Finance,3 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,BIOL0051,Biology I,3 hours,LR4,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,COSY6000,Foundations/Principles of Counselling Psychology,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,EDEP6000,Advanced Sociology of Education,3 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,EGOV6070,Strategic Aspects of Information Technology,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,GEMA0107,Production and Operations Management,3 hours,LR1&2,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,GEMA6030,Managerial Finance,3 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,IMGT6220,Foreign Market Entry Strategy,2 hours,LR11,CLICO BUILDING
+12/21/2023,9:00 am,LAER6007,"Occupational Safety, Health and the Environment",3 hours,LR1&2,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,LAW6205,International Trade and Intellectual Property,3 hours,LR4,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,LAW6550,Construction Dispute Resolution,3 hours,LR4,ROY MARSHALL BUILDING
+12/21/2023,9:00 am,LGSC6000,Logistics and Supply Chain Management,3 hours,S6,SOCIAL SCIENCES
+12/21/2023,9:00 am,MGMT2013,Introduction to International Business,2 hours,LR11,CLICO BUILDING
+12/21/2023,9:00 am,SBCO6213,Corporate Finance,3 hours,S6,SOCIAL SCIENCES
+12/21/2023,9:00 am,SOWK6030,Social Welfare Policy and Administration,3 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,ELET2240,Sensor and Actuation Devices,2 hours,PLD,PHYSICS LAB DOWN
+12/21/2023,1:00 pm,FINA1001,Elements of Banking and Finance (ABSALOM - MUHAMMAD),2 hours,LR1&2,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,FINA1001,Elements of Banking and Finance (MURRAY - YEARWOOD),2 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,GOVT2014,Western Political Thougt,2 hours,PLU,PHYSICS LAB UP
+12/21/2023,1:00 pm,HESC3011,Management of Health Services,2 hours,LR4,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,LITS3501,Advanced Seminar in West Indian Literature,2 hours,PLU,PHYSICS LAB UP
+12/21/2023,1:00 pm,MATH2330,Probability Theory 1,2 hours,LR3,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,MDSC2201,The Endocrine System and Skin,2 hours,LR4,ROY MARSHALL BUILDING
+12/21/2023,1:00 pm,MGMT3220,Project Planning,2 hours,PLU,PHYSICS LAB UP
+12/21/2023,1:00 pm,PSYC3024,Applied Psychology Research Methods,2 hours,PLD,PHYSICS LAB DOWN
+12/21/2023,1:00 pm,SOCI3017,Criminal Justice,2 hours,S6,SOCIAL SCIENCES
