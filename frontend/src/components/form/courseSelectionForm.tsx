@@ -170,7 +170,7 @@ const CourseSelectionForm = ({
                <div className="overflow-x-auto">
                   <table
                      className="table table-sm 
-       md:table-md dark:text-white table-pin-cols"
+       md:table-md dark:text-white text-black table-pin-cols"
                   >
                      <thead>
                         <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">

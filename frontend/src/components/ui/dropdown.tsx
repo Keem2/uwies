@@ -168,7 +168,7 @@ const MenuDropdown = () => {
 
                <ul
                   tabIndex={0}
-                  className="dropdown-content z-[10] menu p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800"
+                  className="dropdown-content z-[10] menu p-2 shadow bg-slate-100 rounded-box w-40 dark:bg-gray-800"
                >
                   <li className="dark:hover:bg-gray-700 rounded-lg dark:text-white mb-2">
                      <NavLink

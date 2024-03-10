@@ -146,7 +146,7 @@ const MultiStepEditForm = () => {
                      {isLoading ? (
                         <LoadingButton
                            title="Creating..."
-                           styles="btn btn-ghost mb-12 px-4 py-1.5 text-base dark:text-white"
+                           styles="btn btn-ghost mb-12 px-4 py-1.5 text-base dark:text-white text-black"
                         />
                      ) : (
                         <button

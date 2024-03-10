@@ -91,7 +91,7 @@ const ScheduleDetails = () => {
                   let results = scheduleList[date];
                   return (
                      <Fragment key={date + index}>
-                        <p className="dark:text-white font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
+                        <p className="dark:text-white text-black font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
                            {date}
                         </p>
 

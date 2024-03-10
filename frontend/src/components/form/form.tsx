@@ -121,7 +121,7 @@ const MultiStepForm = () => {
       <form onSubmit={handleSubmit}>
          <div className="ml-7 mt-7">
             {currentStep !== 2 && (
-               <h1 className="capitalize dark:text-slate-300 font-extrabold mb-10 text-3xl md:text-4xl">
+               <h1 className="capitalize dark:text-slate-300 text-black font-extrabold mb-10 text-3xl md:text-4xl">
                   Create Schedule
                </h1>
             )}
@@ -143,7 +143,7 @@ const MultiStepForm = () => {
                      {isLoading ? (
                         <LoadingButton
                            title="Creating..."
-                           styles="btn btn-ghost mb-12 px-4 py-1.5 text-base dark:text-white"
+                           styles="btn btn-ghost mb-12 px-4 py-1.5 text-base dark:text-white text-black"
                         />
                      ) : (
                         <button

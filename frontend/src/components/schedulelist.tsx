@@ -205,7 +205,7 @@ const ScheduleList = () => {
                                     className="modal"
                                     key={schedule.id}
                                  >
-                                    <div className="modal-box dark:bg-neutral dark:text-white">
+                                    <div className="modal-box bg-slate-100 dark:bg-neutral dark:text-white">
                                        <h3 className="font-semibold text-lg">
                                           Delete {schedule.name}
                                        </h3>
