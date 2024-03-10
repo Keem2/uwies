@@ -1,4 +1,4 @@
-import examlist from "../../../data-clean/examlist_clean.json" assert { type: "json" };
+import examlist from "./examlist_clean.json" assert { type: "json" };
 
 //Function to sort array of objects alphabetically by course code
 const compare = (a, b) => {
