@@ -51,7 +51,7 @@ const ScheduleList = () => {
    useEffect(() => {
       setTimeout(function () {
          setIsDeleteError(false);
-      }, 5000);
+      }, 2000);
    }, [isDeleteError]);
 
    /**re-renders component when function is ran. isLoading as dependency since schedule

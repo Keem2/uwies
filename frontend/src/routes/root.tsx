@@ -22,7 +22,7 @@ const Root = () => {
          <Navbar />
 
          <header className="text-center dark:text-white">
-            <Heading semester={"II"} semesterYear={"2023-2024"} />
+            <Heading semester={"One"} semesterYear={"2023-2024"} />
          </header>
          {session ? (
             <section className="flex justify-center gap-x-6 mt-10">
