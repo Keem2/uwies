@@ -1,4 +1,3 @@
-import { redirect } from "react-router-dom";
 import { ReactElement } from "react";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
@@ -10,12 +9,10 @@ export const ProtectedRoute = ({ children }: { children: ReactElement }) => {
     //user object in localstorage
     const [user] = useLocalStorage("sb-uovudeannppdcnqrmfgu-auth-token");
 
-    //if token exists, return children. Else, redirect user
-    if (user) {
-        return children;
-    } else {
-        redirect("/")
-    }
+    //if token exists, return children. Else, show nothing
+    if (user) return children;
+
+
 
 
 }
