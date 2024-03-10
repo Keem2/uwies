@@ -205,11 +205,11 @@ const ScheduleList = () => {
                                     className="modal"
                                     key={schedule.id}
                                  >
-                                    <div className="modal-box bg-slate-100 dark:bg-neutral dark:text-white">
+                                    <div className="modal-box bg-slate-100 dark:bg-neutral dark:text-white text-black">
                                        <h3 className="font-semibold text-lg">
                                           Delete {schedule.name}
                                        </h3>
-                                       <p className="py-4">
+                                       <p className="py-4 text-black dark:text-white">
                                           Are you sure you want to delete this
                                           schedule?
                                        </p>
@@ -236,7 +236,7 @@ const ScheduleList = () => {
                                                 >
                                                    Delete
                                                 </p>
-                                                <button className="btn">
+                                                <button className="btn bg-slate-300 dark:bg-slate-700 text-black dark:text-white">
                                                    Cancel
                                                 </button>
                                              </form>
