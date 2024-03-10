@@ -1,12 +1,12 @@
 import { CurrentScheduleContext } from "../context/currentScheduleContext";
-import { useContext, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import supabase from "../utils/supabaseClient";
-import { useSession } from "@supabase/auth-helpers-react";
 import { useParams } from "react-router-dom";
 
 type ScheduleDetails = {
    currentSchedule: {
+      userid: string;
       name: string;
       id: string;
       courses: {
@@ -32,12 +32,13 @@ type Course = {
 };
 
 const ScheduleDetails = () => {
-   const session: any = useSession();
    //url params
    let { id }: any = useParams();
    const [isCorrectSchedule, setisCorrectSchedule] = useState(false);
    //cuurent schedule's context
-   const { currentSchedule }: any = useContext(CurrentScheduleContext);
+   const { currentSchedule }: ScheduleDetails = useContext(
+      CurrentScheduleContext
+   );
 
    let scheduleList = currentSchedule.courses
       .sort((a: Course, b: Course) => {
@@ -57,9 +58,8 @@ const ScheduleDetails = () => {
       const isTheirSchedule = async () => {
          const { data } = await supabase
             .from("schedule")
-            .select()
-            .eq("userid", session?.user.id)
-            .eq("id", id);
+            .select("*")
+            .eq("userid", currentSchedule.userid);
 
          if (data !== null) {
             setisCorrectSchedule(true);
@@ -79,7 +79,6 @@ const ScheduleDetails = () => {
          </section>
       );
    }
-
    return (
       <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
          <Navbar />
@@ -87,50 +86,57 @@ const ScheduleDetails = () => {
             <h1 className=" dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
                {currentSchedule.name}
             </h1>
-            {Object.keys(scheduleList).map((date) => {
-               let results = scheduleList[date];
-               return (
-                  <div className="ml-4 md:ml-1 mb-8" key={date}>
-                     <p className="dark:text-white font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
-                        {date}
-                     </p>
-                     {results.map((course: Course) => (
-                        <div className="overflow-x-auto">
-                           <table
-                              key={date}
-                              className="table table-sm 
+            <div className="ml-4 md:ml-1 mb-8">
+               {Object.keys(scheduleList).map((date, index) => {
+                  let results = scheduleList[date];
+                  return (
+                     <Fragment key={date + index}>
+                        <p className="dark:text-white font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
+                           {date}
+                        </p>
+
+                        {results.map((course: Course, index: number) => (
+                           <div className="overflow-x-auto">
+                              <table
+                                 key={date}
+                                 className="table table-sm 
                         md:table-md dark:text-white"
-                           >
-                              <thead>
-                                 <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
-                                    <td>Course Code</td>
-                                    <td>Course Name</td>
-                                    <td>Time</td>
-                                    <td>Length</td>
-                                    <td>Location</td>
-                                    <td>Room</td>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr key={course.description}>
-                                    <td key={course.course}>{course.course}</td>
-                                    <td key={course.description}>
-                                       {course.description}
-                                    </td>
-                                    <td key={course.time}>{course.time}</td>
-                                    <td key={course.hours}>{course.hours}</td>
-                                    <td key={course.location}>
-                                       {course.location}
-                                    </td>
-                                    <td key={course.room}>{course.room}</td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                     ))}
-                  </div>
-               );
-            })}
+                              >
+                                 <thead>
+                                    <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
+                                       <td>Course Code</td>
+                                       <td>Course Name</td>
+                                       <td>Time</td>
+                                       <td>Length</td>
+                                       <td>Location</td>
+                                       <td>Room</td>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr key={index}>
+                                       <td key={course.course}>
+                                          {course.course}
+                                       </td>
+                                       <td key={course.description}>
+                                          {course.description}
+                                       </td>
+                                       <td key={course.time}>{course.time}</td>
+                                       <td key={course.hours}>
+                                          {course.hours}
+                                       </td>
+                                       <td key={course.location}>
+                                          {course.location}
+                                       </td>
+                                       <td key={course.room}>{course.room}</td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                        ))}
+                     </Fragment>
+                  );
+               })}
+            </div>
          </div>
       </section>
    );

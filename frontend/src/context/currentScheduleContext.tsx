@@ -1,4 +1,5 @@
-import { useState, createContext } from "react";
+import { createContext } from "react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 
 const CurrentScheduleContext = createContext<any>({
    currentSchedule: {},
@@ -6,7 +7,10 @@ const CurrentScheduleContext = createContext<any>({
 });
 
 const CurrentScheduleContextProvider = ({ children }: any) => {
-   const [currentSchedule, setCurrentSchedule] = useState<any>({});
+   const [currentSchedule, setCurrentSchedule] = useLocalStorage<any>(
+      "currentSchedule",
+      null
+   );
 
    return (
       <CurrentScheduleContext.Provider

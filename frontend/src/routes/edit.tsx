@@ -2,12 +2,13 @@ import Navbar from "../components/navbar";
 import MultiStepEditForm from "../components/form/editForm";
 import { useEffect, useState } from "react";
 import supabase from "../utils/supabaseClient";
-import { useSession } from "@supabase/auth-helpers-react";
 import { useParams } from "react-router-dom";
+import { CurrentScheduleContext } from "../context/currentScheduleContext";
+import { useContext } from "react";
 
 const Edit = () => {
    const [isCorrectSchedule, setisCorrectSchedule] = useState(false);
-   const session = useSession();
+   const { currentSchedule }: any = useContext(CurrentScheduleContext);
    const { id } = useParams();
 
    useEffect(() => {
@@ -16,7 +17,7 @@ const Edit = () => {
          const { data } = await supabase
             .from("schedule")
             .select()
-            .eq("userid", session?.user.id)
+            .eq("userid", currentSchedule.userid)
             .eq("id", id);
 
          if (data !== null) {

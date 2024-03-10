@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import supabase from "../../utils/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import GoogleIcon from "../../assets/google.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import LoadingButton from "./loadingbutton";
 import { useSession } from "@supabase/auth-helpers-react";
+import { CurrentScheduleContext } from "../../context/currentScheduleContext";
 
 const MenuDropdown = () => {
    //session hook which provides session details
@@ -17,6 +18,8 @@ const MenuDropdown = () => {
    const [isLoginError, setIsLoginError] = useState(false);
 
    const navigate = useNavigate();
+
+   const { setCurrentSchedule }: any = useContext(CurrentScheduleContext);
 
    //hides dropdown menu onclick
    const handleLinkClick = () => {
@@ -30,6 +33,9 @@ const MenuDropdown = () => {
    const googleSignIn = async () => {
       const { error } = await supabase.auth.signInWithOAuth({
          provider: "google",
+         options: {
+            redirectTo: window.location.origin,
+         },
       });
       if (error) {
          setIsLoggingIn(false);
@@ -66,6 +72,7 @@ const MenuDropdown = () => {
          setIsLoggingOut(false);
          setIsLoginError(true);
       }
+      setCurrentSchedule(null);
    }
 
    return (
