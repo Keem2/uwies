@@ -14,13 +14,13 @@ const FormUpdateError = () => {
          <div className="flex mx-12 md:mx-32 lg:mx-96 mt-12 gap-10 justify-center flex-col">
             <Link
                to={"/view"}
-               className="border-gray-600 rounded-lg border py-3 dark:text-white dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
+               className="border-gray-600 rounded-lg border py-3 dark:text-white text-black dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
             >
                Back to schedules
             </Link>
             <Link
                to={"/"}
-               className="border-gray-600 rounded-lg border py-3 dark:text-white dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
+               className="border-gray-600 rounded-lg border py-3 dark:text-white text-black dark:border-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-90"
             >
                Back to home
             </Link>

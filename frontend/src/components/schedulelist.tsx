@@ -63,7 +63,7 @@ const ScheduleList = () => {
 
    return (
       <section className="ml-1 md:ml-5 mt-7">
-         <h1 className="capitalize dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
+         <h1 className="text-slate-900 capitalize dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
             Your Schedules
          </h1>
          {/**Card Container*/}

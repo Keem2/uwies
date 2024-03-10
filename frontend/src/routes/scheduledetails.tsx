@@ -83,7 +83,7 @@ const ScheduleDetails = () => {
       <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
          <Navbar />
          <div className="ml-1 md:ml-5 mt-7">
-            <h1 className=" dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
+            <h1 className="text-slate-900  dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
                {currentSchedule.name}
             </h1>
             <div className="ml-4 md:ml-1 mb-8">
@@ -100,7 +100,7 @@ const ScheduleDetails = () => {
                               <table
                                  key={date}
                                  className="table table-sm 
-                        md:table-md dark:text-white"
+                        md:table-md dark:text-white text-black"
                               >
                                  <thead>
                                     <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">

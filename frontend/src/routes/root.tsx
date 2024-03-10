@@ -18,10 +18,10 @@ const Root = () => {
    }
 
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden text-black dark:text-white">
          <Navbar />
 
-         <header className="text-center dark:text-white text-black">
+         <header className="text-center">
             <Heading semester={"One"} semesterYear={"2023-2024"} />
          </header>
          {session ? (

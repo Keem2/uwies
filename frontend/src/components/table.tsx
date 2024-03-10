@@ -50,7 +50,7 @@ const Table = () => {
                            <table
                               key={date}
                               className="table table-sm 
-       md:table-md dark:text-white"
+       md:table-md dark:text-white text-black"
                            >
                               <thead>
                                  <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">

@@ -20,8 +20,10 @@ const ScheduleNameForm = ({
    return (
       <FormWrapper>
          <ul className="steps justify-center mb-16">
-            <li className="step step-primary dark:text-white">Enter name</li>
-            <li className="step dark:text-white ">Choose courses</li>
+            <li className="step step-primary dark:text-white text-black">
+               Enter name
+            </li>
+            <li className="step dark:text-white text-black">Choose courses</li>
          </ul>
          {/**Error shown if schedule's name is empty */}
          {isEmpty && (

@@ -54,8 +54,10 @@ const CourseSelectionForm = ({
    return (
       <FormWrapper>
          <ul className="steps justify-center mb-16">
-            <li className="step step-primary dark:text-white">Enter name</li>
-            <li className="step step-primary dark:text-white ">
+            <li className="step step-primary dark:text-white text-black">
+               Enter name
+            </li>
+            <li className="step step-primary dark:text-white text-black">
                Choose courses
             </li>
          </ul>
@@ -88,7 +90,7 @@ const CourseSelectionForm = ({
          <div className="overflow-x-auto h-48">
             <table
                className="table table-sm 
-       md:table-md dark:text-white table-pin-cols"
+       md:table-md dark:text-white text-black table-pin-cols"
             >
                <thead>
                   <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
