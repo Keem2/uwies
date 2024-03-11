@@ -1,6 +1,5 @@
 import examlist from "./examlist_clean.json" assert { type: "json" };
 
-//Have Node 21+ for this to work
 const result = examlist
    .sort((a, b) => {
       /** Sorts schedules by date and time created

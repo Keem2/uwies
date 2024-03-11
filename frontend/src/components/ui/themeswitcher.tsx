@@ -37,7 +37,6 @@ const ThemeSwitcher = () => {
             {/**checked property -  value to change style of switch based on state variable 'theme'*/}
             <input
                type="checkbox"
-               value="synthwave"
                className="toggle theme-controller"
                checked={theme === "light" ? false : true}
                onClick={() =>
