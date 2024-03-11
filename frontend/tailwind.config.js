@@ -9,8 +9,8 @@ export default {
       },
    },
    daisyui: {
-      themes: false,
-      darkTheme: "light",
+      themes: false, // Only light & dark theme
+      darkTheme: "light", // sets default theme, even with OS preferences
    },
    plugins: [require("daisyui")],
    darkMode: "class",
