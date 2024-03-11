@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useSessionStorage } from "@uidotdev/usehooks";
 
 const CurrentScheduleContext = createContext<any>({
    currentSchedule: {},
@@ -7,7 +7,7 @@ const CurrentScheduleContext = createContext<any>({
 });
 
 const CurrentScheduleContextProvider = ({ children }: any) => {
-   const [currentSchedule, setCurrentSchedule] = useLocalStorage<any>(
+   const [currentSchedule, setCurrentSchedule] = useSessionStorage<any>(
       "currentSchedule",
       null
    );
