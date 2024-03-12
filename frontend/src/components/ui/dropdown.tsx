@@ -19,7 +19,7 @@ const MenuDropdown = () => {
 
    const navigate = useNavigate();
 
-   const { setCurrentSchedule }: any = useContext(CurrentScheduleContext);
+   const { setCurrentSchedule } = useContext(CurrentScheduleContext);
 
    //hides dropdown menu onclick
    const handleLinkClick = () => {

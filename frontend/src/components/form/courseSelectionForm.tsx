@@ -111,7 +111,7 @@ const CourseSelectionForm = ({
                                    .toLowerCase()
                                    .includes(search.toLowerCase());
                      })
-                     .map((exam: Course, index: any) => (
+                     .map((exam: Course, index: number) => (
                         <tr key={index}>
                            <td>{exam.course}</td>
                            <td>{exam.description}</td>

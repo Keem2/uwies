@@ -16,7 +16,7 @@ const ScheduleList = () => {
    const { setCurrentSchedule } = useContext(CurrentScheduleContext);
    const navigate = useNavigate();
    const session = useSession();
-   const [schedule, setSchedule] = useState<any>([]);
+   const [schedule, setSchedule] = useState<ScheduleCard[]>([]);
    const [isLoading, setIsLoading] = useState(true);
    const [isDeleting, setisDeleting] = useState(false);
    const [isDeleteError, setIsDeleteError] = useState(false);
@@ -184,7 +184,7 @@ const ScheduleList = () => {
                                              e.stopPropagation();
                                              let modal =
                                                 document.getElementById(
-                                                   schedule.id as any
+                                                   schedule.id
                                                 ) as HTMLDialogElement;
                                              modal.showModal();
                                           }}
@@ -201,7 +201,7 @@ const ScheduleList = () => {
                               </div>
                               {!isDeleteError && (
                                  <dialog
-                                    id={schedule.id as any}
+                                    id={schedule.id}
                                     className="modal"
                                     key={schedule.id}
                                  >

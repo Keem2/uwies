@@ -28,7 +28,7 @@ const INITIAL_FORM_DATA: FormData = {
 };
 const MultiStepForm = () => {
    //user context
-   const session: any = useSession();
+   const session = useSession();
 
    //form data state
    const [data, setData] = useState(INITIAL_FORM_DATA);

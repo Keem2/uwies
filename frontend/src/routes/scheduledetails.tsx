@@ -4,23 +4,6 @@ import Navbar from "../components/navbar";
 import supabase from "../utils/supabaseClient";
 import { useParams } from "react-router-dom";
 
-type ScheduleDetails = {
-   currentSchedule: {
-      userid: string;
-      name: string;
-      id: string;
-      courses: {
-         course: string;
-         date: string;
-         description: string;
-         hours: string;
-         location: string;
-         room: string;
-         time: string;
-      }[];
-   };
-};
-
 type Course = {
    course: string;
    date: string;
@@ -33,14 +16,12 @@ type Course = {
 
 const ScheduleDetails = () => {
    //url params
-   let { id }: any = useParams();
+   let { id } = useParams();
    const [isCorrectSchedule, setisCorrectSchedule] = useState(false);
    //cuurent schedule's context
-   const { currentSchedule }: ScheduleDetails = useContext(
-      CurrentScheduleContext
-   );
+   const { currentSchedule } = useContext(CurrentScheduleContext);
 
-   let scheduleList = currentSchedule.courses
+   let scheduleList = currentSchedule!.courses
       .sort((a: Course, b: Course) => {
          /** Sorts schedules by date and time created
           * With earliest showing first*/

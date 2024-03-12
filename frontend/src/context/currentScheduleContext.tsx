@@ -1,8 +1,25 @@
-import { createContext } from "react";
+import { Dispatch, SetStateAction, createContext } from "react";
 import { useSessionStorage } from "@uidotdev/usehooks";
 
-const CurrentScheduleContext = createContext<any>({
-   currentSchedule: {},
+interface ScheduleContext {
+   currentSchedule: {
+      userid: string;
+      name: string;
+      id: string;
+      courses: {
+         course: string;
+         date: string;
+         description: string;
+         hours: string;
+         location: string;
+         room: string;
+         time: string;
+      }[];
+   };
+   setCurrentSchedule: Dispatch<SetStateAction<{} | null>>;
+}
+const CurrentScheduleContext = createContext<ScheduleContext>({
+   currentSchedule: { userid: "", name: "", id: "", courses: [] },
    setCurrentSchedule: () => {},
 });
 

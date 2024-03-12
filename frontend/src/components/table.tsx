@@ -64,7 +64,7 @@ const Table = () => {
                               </thead>
                               <tbody>
                                  {filterResults.map(
-                                    (exam: Exam, index: any) => {
+                                    (exam: Exam, index: number) => {
                                        return (
                                           <tr key={index}>
                                              <td key={exam.course}>
