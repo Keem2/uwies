@@ -21,7 +21,7 @@ const ScheduleDetails = () => {
    //cuurent schedule's context
    const { currentSchedule } = useContext(CurrentScheduleContext);
 
-   let scheduleList = currentSchedule!.courses
+   let scheduleList = currentSchedule.courses
       .sort((a: Course, b: Course) => {
          /** Sorts schedules by date and time created
           * With earliest showing first*/

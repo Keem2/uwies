@@ -32,8 +32,8 @@ const MultiStepEditForm = () => {
 
    //form data state
    const [data, setData] = useState({
-      scheduleName: currentSchedule!.name,
-      chosenCourses: [...currentSchedule!.courses],
+      scheduleName: currentSchedule.name,
+      chosenCourses: [...currentSchedule.courses],
    });
    const [isEmpty, setIsEmpty] = useState({
       name: false,
@@ -110,7 +110,7 @@ const MultiStepEditForm = () => {
             },
          ])
          .eq("userid", session?.user.id)
-         .eq("id", currentSchedule!.id);
+         .eq("id", currentSchedule.id);
       if (error) {
          setIsLoading(false);
          goToStep(3);
