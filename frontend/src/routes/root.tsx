@@ -5,6 +5,7 @@ import BookmarkIcon from "../assets/bookmark.svg";
 import AddIcon from "../assets/add.svg";
 import Divider from "../components/ui/divider";
 import Table from "../components/table";
+import Footer from "../components/footer";
 import { useSession, useSessionContext } from "@supabase/auth-helpers-react";
 
 const Root = () => {
@@ -54,6 +55,7 @@ const Root = () => {
             <Divider />
             <Table />
          </section>
+         <Footer />
       </section>
    );
 };

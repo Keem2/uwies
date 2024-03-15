@@ -12,6 +12,8 @@ import { ProtectedRoute } from "./routes/protectedroute";
 import supabase from "./utils/supabaseClient";
 import { SessionContextProvider } from "@supabase/auth-helpers-react"; // session context
 import { CurrentScheduleContextProvider } from "./context/currentScheduleContext";
+import PrivacyPolicy from "./routes/privacypolicy";
+import Terms from "./routes/terms";
 
 const router = createBrowserRouter([
    {
@@ -53,6 +55,16 @@ const router = createBrowserRouter([
             <Edit />
          </ProtectedRoute>
       ),
+      errorElement: <ErrorBoundary />,
+   },
+   {
+      path: "/privacy",
+      element: <PrivacyPolicy />,
+      errorElement: <ErrorBoundary />,
+   },
+   {
+      path: "/terms",
+      element: <Terms />,
       errorElement: <ErrorBoundary />,
    },
 ]);
