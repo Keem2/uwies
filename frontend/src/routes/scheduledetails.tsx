@@ -21,6 +21,7 @@ const ScheduleDetails = () => {
    //cuurent schedule's context
    const { currentSchedule } = useContext(CurrentScheduleContext);
 
+   //sorting courses' dates
    let scheduleList = currentSchedule.courses
       .sort((a: Course, b: Course) => {
          /** Sorts schedules by date and time created
@@ -39,8 +40,9 @@ const ScheduleDetails = () => {
       const isTheirSchedule = async () => {
          const { data } = await supabase
             .from("schedule")
-            .select("*")
-            .eq("userid", currentSchedule.userid);
+            .select("name, courses, created_at")
+            .eq("userid", currentSchedule.userid)
+            .eq("id", id);
 
          if (data !== null) {
             setisCorrectSchedule(true);

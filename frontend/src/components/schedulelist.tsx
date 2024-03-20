@@ -9,7 +9,6 @@ type ScheduleCard = {
    courses: { course: string; description: string }[] | null;
    id: string;
    name: string | null;
-   userid: string;
    created_at: string;
 };
 const ScheduleList = () => {

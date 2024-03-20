@@ -11,14 +11,15 @@ const Edit = () => {
    const { currentSchedule, setCurrentSchedule } = useContext(
       CurrentScheduleContext
    );
+   //url params
    const { id } = useParams();
 
    useEffect(() => {
-      //check to see if schedule details is truly theirs
+      //check to see if schedule is truly theirs
       const isTheirSchedule = async () => {
          const { data: schedule } = await supabase
             .from("schedule")
-            .select()
+            .select("*")
             .eq("userid", currentSchedule.userid)
             .eq("id", id);
 
