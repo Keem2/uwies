@@ -17,15 +17,18 @@ const Edit = () => {
    useEffect(() => {
       //check to see if schedule is truly theirs
       const isTheirSchedule = async () => {
-         const { data: schedule } = await supabase
+         const { data: schedule, error } = await supabase
             .from("schedule")
-            .select("*")
+            .select("name, courses, userid, id")
             .eq("userid", currentSchedule.userid)
             .eq("id", id);
 
          if (schedule !== null) {
             setisCorrectSchedule(true);
             setCurrentSchedule(schedule[0]);
+         }
+         if (error) {
+            console.log(error);
          }
       };
       isTheirSchedule();
