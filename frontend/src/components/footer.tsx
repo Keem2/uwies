@@ -12,7 +12,7 @@ const Footer = () => {
             </Link>
          </div>
          <p className="bg-gradient-to-r from-purple-300 via-pink-300 to-red-400 inline-block text-transparent bg-clip-text">
-            A ❤️️ project by Akeem Smith
+            Made with ❤️️ by Akeem Smith
          </p>
       </footer>
    );

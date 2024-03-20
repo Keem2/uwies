@@ -8,20 +8,23 @@ import { useContext } from "react";
 
 const Edit = () => {
    const [isCorrectSchedule, setisCorrectSchedule] = useState(false);
-   const { currentSchedule }: any = useContext(CurrentScheduleContext);
+   const { currentSchedule, setCurrentSchedule } = useContext(
+      CurrentScheduleContext
+   );
    const { id } = useParams();
 
    useEffect(() => {
       //check to see if schedule details is truly theirs
       const isTheirSchedule = async () => {
-         const { data } = await supabase
+         const { data: schedule } = await supabase
             .from("schedule")
             .select()
             .eq("userid", currentSchedule.userid)
             .eq("id", id);
 
-         if (data !== null) {
+         if (schedule !== null) {
             setisCorrectSchedule(true);
+            setCurrentSchedule(schedule[0]);
          }
       };
       isTheirSchedule();
