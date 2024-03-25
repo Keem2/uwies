@@ -58,7 +58,7 @@ const ScheduleList = () => {
     */
    useEffect(() => {
       getSchedules();
-   }, [isLoading]);
+   });
 
    return (
       <section className="ml-1 md:ml-5 mt-7">
