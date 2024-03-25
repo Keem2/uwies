@@ -48,17 +48,19 @@ const ScheduleList = () => {
 
    //hide error toast after 5 seconds
    useEffect(() => {
-      setTimeout(function () {
+      const timer = setTimeout(function () {
          setIsDeleteError(false);
-      }, 2000);
+      }, 3000);
+      return () => {
+         clearTimeout(timer);
+      };
    }, [isDeleteError]);
 
-   /**re-renders component when function is ran. isLoading as dependency since schedule
-    * state array was resetting on reload
+   /**useEffect to get schedules from database
     */
    useEffect(() => {
       getSchedules();
-   });
+   }, [isLoading]);
 
    return (
       <section className="ml-1 md:ml-5 mt-7">

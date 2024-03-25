@@ -45,9 +45,12 @@ const MenuDropdown = () => {
 
    //hide error toast after 5 seconds
    useEffect(() => {
-      setTimeout(function () {
+      const timer = setTimeout(function () {
          setIsLoginError(false);
       }, 5000);
+      return () => {
+         clearTimeout(timer);
+      };
    }, [isLoginError]);
 
    //logic if user is signed in or signed out
