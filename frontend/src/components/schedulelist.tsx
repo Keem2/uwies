@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment, useContext } from "react";
+import { useState, useEffect, Fragment, useContext, useRef } from "react";
 import supabase from "../utils/supabaseClient";
 import { useSession } from "@supabase/auth-helpers-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,6 +20,8 @@ const ScheduleList = () => {
    const [isDeleting, setisDeleting] = useState(false);
    const [isDeleteError, setIsDeleteError] = useState(false);
 
+   const dialogRef = useRef<HTMLDialogElement>(null);
+
    //function to get user schedules from supabase, placing them in a state array
    const getSchedules = async () => {
       let { data: schedule } = await supabase
@@ -38,10 +40,11 @@ const ScheduleList = () => {
 
       if (error) {
          //if error occured, close modal and show toast
+         dialogRef.current?.close();
          setisDeleting(false);
          setIsDeleteError(true);
       } else {
-         navigate(0);
+         dialogRef.current?.close();
          setisDeleting(false);
       }
    };
@@ -60,7 +63,7 @@ const ScheduleList = () => {
     */
    useEffect(() => {
       getSchedules();
-   }, [isLoading]);
+   }, [isLoading, isDeleting]);
 
    return (
       <section className="ml-1 md:ml-5 mt-7">
@@ -200,52 +203,51 @@ const ScheduleList = () => {
                                     </div>
                                  </div>
                               </div>
-                              {!isDeleteError && (
-                                 <dialog
-                                    id={schedule.id}
-                                    className="modal"
-                                    key={schedule.id}
-                                 >
-                                    <div className="modal-box bg-slate-100 dark:bg-neutral dark:text-white text-black">
-                                       <h3 className="font-semibold text-lg">
-                                          Delete {schedule.name}
-                                       </h3>
-                                       <p className="py-4 text-black dark:text-white">
-                                          Are you sure you want to delete this
-                                          schedule?
-                                       </p>
-                                       {isDeleting ? (
-                                          <div className="modal-action">
+
+                              {/**Dialog element for schedules when deleting one */}
+                              <dialog
+                                 id={schedule.id}
+                                 className="modal"
+                                 key={schedule.id}
+                                 ref={dialogRef}
+                              >
+                                 <div className="modal-box bg-slate-100 dark:bg-neutral dark:text-white text-black">
+                                    <h3 className="font-semibold text-lg">
+                                       Delete {schedule.name}
+                                    </h3>
+                                    <p className="py-4 text-black dark:text-white">
+                                       Are you sure you want to delete this
+                                       schedule?
+                                    </p>
+                                    {isDeleting ? (
+                                       <div className="modal-action">
+                                          {/* if there is a button in form, it will close the modal */}
+                                          <p className="btn btn-error text-white">
+                                             <span className="loading loading-spinner"></span>
+                                             Deleting...
+                                          </p>
+                                       </div>
+                                    ) : (
+                                       <div className="modal-action">
+                                          <form method="dialog">
                                              {/* if there is a button in form, it will close the modal */}
-                                             <p className="btn btn-error text-white">
-                                                <span className="loading loading-spinner"></span>
-                                                Deleting...
+                                             <p
+                                                className="btn btn-error mr-5 text-white"
+                                                onClick={() => {
+                                                   setisDeleting(true);
+                                                   deleteSchedule(schedule.id);
+                                                }}
+                                             >
+                                                Delete
                                              </p>
-                                          </div>
-                                       ) : (
-                                          <div className="modal-action">
-                                             <form method="dialog">
-                                                {/* if there is a button in form, it will close the modal */}
-                                                <p
-                                                   className="btn btn-error mr-5 text-white"
-                                                   onClick={() => {
-                                                      setisDeleting(true);
-                                                      deleteSchedule(
-                                                         schedule.id
-                                                      );
-                                                   }}
-                                                >
-                                                   Delete
-                                                </p>
-                                                <button className="btn bg-slate-300 dark:bg-slate-700 text-black dark:text-white">
-                                                   Cancel
-                                                </button>
-                                             </form>
-                                          </div>
-                                       )}
-                                    </div>
-                                 </dialog>
-                              )}
+                                             <button className="btn bg-slate-300 dark:bg-slate-700 text-black dark:text-white">
+                                                Cancel
+                                             </button>
+                                          </form>
+                                       </div>
+                                    )}
+                                 </div>
+                              </dialog>
                            </Fragment>
                         ))
                   )}
