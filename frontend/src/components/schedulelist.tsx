@@ -20,7 +20,7 @@ const ScheduleList = () => {
    const [isDeleting, setisDeleting] = useState(false);
    const [isDeleteError, setIsDeleteError] = useState(false);
 
-   const dialogRef = useRef<HTMLDialogElement>(null);
+   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
    //function to get user schedules from supabase, placing them in a state array
    const getSchedules = async () => {
@@ -44,8 +44,8 @@ const ScheduleList = () => {
          setisDeleting(false);
          setIsDeleteError(true);
       } else {
-         dialogRef.current?.close();
          setisDeleting(false);
+         dialogRef.current?.close();
       }
    };
 
@@ -186,11 +186,14 @@ const ScheduleList = () => {
                          dark:stroke-white dark:hover:stroke-red-500"
                                           onClick={(e) => {
                                              e.stopPropagation();
+                                             //setting dialog ref
                                              let modal =
                                                 document.getElementById(
                                                    schedule.id
                                                 ) as HTMLDialogElement;
-                                             modal.showModal();
+
+                                             dialogRef.current = modal;
+                                             dialogRef.current?.showModal();
                                           }}
                                        >
                                           <path
