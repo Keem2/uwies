@@ -19,7 +19,7 @@ const Root = () => {
    }
 
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden text-black dark:text-white">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden text-black dark:text-white">
          <Navbar />
 
          <header className="text-center">

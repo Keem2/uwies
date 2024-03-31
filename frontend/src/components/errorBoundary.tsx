@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ErrorBoundary = () => {
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden">
          <Navbar />
          <div className="ml-5 md:ml-5 mt-20 text-center">
             <h1 className="text-3xl md:text-4xl dark:text-white font-semibold italic">

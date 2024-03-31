@@ -3,7 +3,7 @@ import Navbar from "../components/navbar";
 
 const Terms = () => {
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden text-black dark:text-white">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden text-black dark:text-white">
          <Navbar />
 
          <h1 className="text-slate-900 capitalize dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 mt-8 text-3xl md:text-4xl">

@@ -34,7 +34,7 @@ const Edit = () => {
    if (!isCorrectSchedule) {
       //if isCorrectSchedule state stays false, show loading
       return (
-         <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+         <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden">
             <Navbar />
             <div className="ml-5 md:ml-5 mt-7">
                <span className="loading loading-dots loading-lg bg-black dark:bg-white"></span>
@@ -44,7 +44,7 @@ const Edit = () => {
    }
 
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden">
          <Navbar />
          <MultiStepEditForm />
       </section>

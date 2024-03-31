@@ -54,7 +54,7 @@ const ScheduleDetails = () => {
    if (!isCorrectSchedule) {
       //if isCorrectSchedule state stays false, show loading
       return (
-         <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+         <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden">
             <Navbar />
             <div className="ml-5 md:ml-5 mt-7">
                <span className="loading loading-dots loading-lg bg-black dark:bg-white"></span>
@@ -63,7 +63,7 @@ const ScheduleDetails = () => {
       );
    }
    return (
-      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-screen overflow-x-hidden">
+      <section className="px-7 pt-4 bg-slate-50 dark:bg-gray-900 font-body-font h-dvh overflow-x-hidden">
          <Navbar />
          <div className="ml-1 md:ml-5 mt-7">
             <h1 className="text-slate-900  dark:text-slate-300 font-extrabold ml-3.5 md:ml-1 mb-6 text-3xl md:text-4xl">
