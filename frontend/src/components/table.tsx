@@ -104,7 +104,7 @@ const Table = () => {
       <>
          <div className="w-100 mb-8">
             <Searchbar
-               placeholder="Search by code name or code"
+               placeholder="Search by course name or code"
                onChange={handleChange}
                value={search}
             />

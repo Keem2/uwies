@@ -77,12 +77,12 @@ const CourseSelectionForm = ({
                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                </svg>
-               <span>Your schedule must have a code in it.</span>
+               <span>Your schedule must have a course in it.</span>
             </div>
          )}
          <div className="w-100 mb-8">
             <Searchbar
-               placeholder="Search by code name or code"
+               placeholder="Search by course name or code"
                onChange={handleChange}
                value={search}
             />
@@ -101,13 +101,13 @@ const CourseSelectionForm = ({
                </thead>
                <tbody>
                   {courses
-                     .filter((code: Course) => {
+                     .filter((course: Course) => {
                         return search.toLowerCase() === ""
-                           ? code
-                           : code.title
+                           ? course
+                           : course.title
                                 .toLowerCase()
                                 .includes(search.toLowerCase()) ||
-                                code.code
+                                course.code
                                    .toLowerCase()
                                    .includes(search.toLowerCase());
                      })
@@ -117,9 +117,9 @@ const CourseSelectionForm = ({
                            <td>{exam.title}</td>
                            <th className="bg-slate-50 dark:bg-gray-900">
                               <div className="flex justify-center">
-                                 {/**If code has been added to courseSelection state array, change from add button to added */}
+                                 {/**If course has been added to courseSelection state array, change from add button to added */}
                                  {courseSelection.filter(
-                                    (code) => code.title === exam.title
+                                    (course) => course.title === exam.title
                                  ).length > 0 ? (
                                     <p className="border border-black dark:border-white p-2 rounded-md">
                                        Added
@@ -184,40 +184,43 @@ const CourseSelectionForm = ({
                         </tr>
                      </thead>
                      <tbody>
-                        {courseSelection.map((code: Course, index: number) => {
-                           return (
-                              <tr key={index}>
-                                 <td>{code.code}</td>
-                                 <td>{code.title}</td>
-                                 <td>{code.time}</td>
-                                 <td>{code.hours}</td>
-                                 <td>{code.location}</td>
-                                 <td>{code.room}</td>
-                                 <td>{code.date}</td>
-                                 <th className="bg-slate-50 dark:bg-gray-900">
-                                    <div className="flex justify-center">
-                                       <button
-                                          type="button"
-                                          className="btn w-16
+                        {courseSelection.map(
+                           (course: Course, index: number) => {
+                              return (
+                                 <tr key={index}>
+                                    <td>{course.code}</td>
+                                    <td>{course.title}</td>
+                                    <td>{course.time}</td>
+                                    <td>{course.hours}</td>
+                                    <td>{course.location}</td>
+                                    <td>{course.room}</td>
+                                    <td>{course.date}</td>
+                                    <th className="bg-slate-50 dark:bg-gray-900">
+                                       <div className="flex justify-center">
+                                          <button
+                                             type="button"
+                                             className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                          onClick={() => {
-                                             //Remove from courseSelection array
-                                             setCourseSelection(
-                                                courseSelection.filter(
-                                                   (exam) =>
-                                                      exam.title !== code.title
-                                                )
-                                             );
-                                          }}
-                                       >
-                                          Remove
-                                       </button>
-                                    </div>
-                                 </th>
-                              </tr>
-                           );
-                        })}
+                                             onClick={() => {
+                                                //Remove from courseSelection array
+                                                setCourseSelection(
+                                                   courseSelection.filter(
+                                                      (exam) =>
+                                                         exam.title !==
+                                                         course.title
+                                                   )
+                                                );
+                                             }}
+                                          >
+                                             Remove
+                                          </button>
+                                       </div>
+                                    </th>
+                                 </tr>
+                              );
+                           }
+                        )}
                      </tbody>
                   </table>
                </div>
