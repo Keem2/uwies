@@ -70,50 +70,57 @@ const ScheduleDetails = () => {
                {currentSchedule.name}
             </h1>
             <div className="ml-4 md:ml-1 mb-8">
-               {Object.keys(scheduleList).map((date, index) => {
+               {Object.keys(scheduleList).map((date) => {
                   let results = scheduleList[date];
                   return (
-                     <Fragment key={date + index}>
+                     <Fragment key={date}>
                         <p className="dark:text-white text-black font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
                            {date}
                         </p>
-
-                        {results.map((course: Course, index: number) => (
-                           <div className="overflow-x-auto">
-                              <table
-                                 key={date}
-                                 className="table table-sm 
+                        <div className="overflow-x-auto">
+                           <table
+                              key={date}
+                              className="table table-sm 
                         md:table-md dark:text-white text-black"
-                              >
-                                 <thead>
-                                    <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
-                                       <td>Course Code</td>
-                                       <td>Course Name</td>
-                                       <td>Time</td>
-                                       <td>Length</td>
-                                       <td>Location</td>
-                                       <td>Room</td>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr key={index}>
-                                       <td key={course.code}>{course.code}</td>
-                                       <td key={course.title}>
-                                          {course.title}
-                                       </td>
-                                       <td key={course.time}>{course.time}</td>
-                                       <td key={course.hours}>
-                                          {course.hours}
-                                       </td>
-                                       <td key={course.location}>
-                                          {course.location}
-                                       </td>
-                                       <td key={course.room}>{course.room}</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
-                        ))}
+                           >
+                              <thead>
+                                 <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
+                                    <td>Course Code</td>
+                                    <td>Course Name</td>
+                                    <td>Time</td>
+                                    <td>Length</td>
+                                    <td>Location</td>
+                                    <td>Room</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 {results.map(
+                                    (course: Course, index: number) => (
+                                       <tr key={index}>
+                                          <td key={course.code}>
+                                             {course.code}
+                                          </td>
+                                          <td key={course.title}>
+                                             {course.title}
+                                          </td>
+                                          <td key={course.time}>
+                                             {course.time}
+                                          </td>
+                                          <td key={course.hours}>
+                                             {course.hours}
+                                          </td>
+                                          <td key={course.location}>
+                                             {course.location}
+                                          </td>
+                                          <td key={course.room}>
+                                             {course.room}
+                                          </td>
+                                       </tr>
+                                    )
+                                 )}
+                              </tbody>
+                           </table>
+                        </div>
                      </Fragment>
                   );
                })}
