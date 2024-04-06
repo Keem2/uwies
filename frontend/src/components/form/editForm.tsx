@@ -13,8 +13,8 @@ import { CurrentScheduleContext } from "../../context/currentScheduleContext";
 type FormData = {
    scheduleName: string;
    chosenCourses: {
-      course: string;
-      description: string;
+      code: string;
+      title: string;
       time: string;
       hours: string;
       location: string;

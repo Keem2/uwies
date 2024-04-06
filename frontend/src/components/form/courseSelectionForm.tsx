@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Searchbar from "../ui/searchbar";
 
 type Course = {
-   course: string;
-   description: string;
+   code: string;
+   title: string;
    time: string;
    hours: string;
    location: string;
@@ -15,8 +15,8 @@ type Course = {
 
 type ScheduleData = {
    chosenCourses: {
-      course: string;
-      description: string;
+      code: string;
+      title: string;
       time: string;
       hours: string;
       location: string;
@@ -77,12 +77,12 @@ const CourseSelectionForm = ({
                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                   />
                </svg>
-               <span>Your schedule must have a course in it.</span>
+               <span>Your schedule must have a code in it.</span>
             </div>
          )}
          <div className="w-100 mb-8">
             <Searchbar
-               placeholder="Search by course name or code"
+               placeholder="Search by code name or code"
                onChange={handleChange}
                value={search}
             />
@@ -101,26 +101,25 @@ const CourseSelectionForm = ({
                </thead>
                <tbody>
                   {courses
-                     .filter((course: Course) => {
+                     .filter((code: Course) => {
                         return search.toLowerCase() === ""
-                           ? course
-                           : course.description
+                           ? code
+                           : code.title
                                 .toLowerCase()
                                 .includes(search.toLowerCase()) ||
-                                course.course
+                                code.code
                                    .toLowerCase()
                                    .includes(search.toLowerCase());
                      })
                      .map((exam: Course, index: number) => (
                         <tr key={index}>
-                           <td>{exam.course}</td>
-                           <td>{exam.description}</td>
+                           <td>{exam.code}</td>
+                           <td>{exam.title}</td>
                            <th className="bg-slate-50 dark:bg-gray-900">
                               <div className="flex justify-center">
-                                 {/**If course has been added to courseSelection state array, change from add button to added */}
+                                 {/**If code has been added to courseSelection state array, change from add button to added */}
                                  {courseSelection.filter(
-                                    (course) =>
-                                       course.description === exam.description
+                                    (code) => code.title === exam.title
                                  ).length > 0 ? (
                                     <p className="border border-black dark:border-white p-2 rounded-md">
                                        Added
@@ -135,8 +134,8 @@ const CourseSelectionForm = ({
                                           setCourseSelection([
                                              ...courseSelection,
                                              {
-                                                course: exam.course,
-                                                description: exam.description,
+                                                code: exam.code,
+                                                title: exam.title,
                                                 time: exam.time,
                                                 hours: exam.hours,
                                                 location: exam.location,
@@ -185,43 +184,40 @@ const CourseSelectionForm = ({
                         </tr>
                      </thead>
                      <tbody>
-                        {courseSelection.map(
-                           (course: Course, index: number) => {
-                              return (
-                                 <tr key={index}>
-                                    <td>{course.course}</td>
-                                    <td>{course.description}</td>
-                                    <td>{course.time}</td>
-                                    <td>{course.hours}</td>
-                                    <td>{course.location}</td>
-                                    <td>{course.room}</td>
-                                    <td>{course.date}</td>
-                                    <th className="bg-slate-50 dark:bg-gray-900">
-                                       <div className="flex justify-center">
-                                          <button
-                                             type="button"
-                                             className="btn w-16
+                        {courseSelection.map((code: Course, index: number) => {
+                           return (
+                              <tr key={index}>
+                                 <td>{code.code}</td>
+                                 <td>{code.title}</td>
+                                 <td>{code.time}</td>
+                                 <td>{code.hours}</td>
+                                 <td>{code.location}</td>
+                                 <td>{code.room}</td>
+                                 <td>{code.date}</td>
+                                 <th className="bg-slate-50 dark:bg-gray-900">
+                                    <div className="flex justify-center">
+                                       <button
+                                          type="button"
+                                          className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                             onClick={() => {
-                                                //Remove from courseSelection array
-                                                setCourseSelection(
-                                                   courseSelection.filter(
-                                                      (exam) =>
-                                                         exam.description !==
-                                                         course.description
-                                                   )
-                                                );
-                                             }}
-                                          >
-                                             Remove
-                                          </button>
-                                       </div>
-                                    </th>
-                                 </tr>
-                              );
-                           }
-                        )}
+                                          onClick={() => {
+                                             //Remove from courseSelection array
+                                             setCourseSelection(
+                                                courseSelection.filter(
+                                                   (exam) =>
+                                                      exam.title !== code.title
+                                                )
+                                             );
+                                          }}
+                                       >
+                                          Remove
+                                       </button>
+                                    </div>
+                                 </th>
+                              </tr>
+                           );
+                        })}
                      </tbody>
                   </table>
                </div>

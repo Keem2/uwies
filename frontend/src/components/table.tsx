@@ -6,8 +6,8 @@ import { Fragment, useState } from "react";
 import React from "react";
 
 type Exam = {
-   course: string;
-   description: string;
+   code: string;
+   title: string;
    time: string;
    hours: string;
    location: string;
@@ -30,10 +30,8 @@ const Table = () => {
             let filterResults = result[date].filter((exam: Exam) => {
                return search.toLowerCase() === ""
                   ? exam
-                  : exam.description
-                       .toLowerCase()
-                       .includes(search.toLowerCase()) ||
-                       exam.course.toLowerCase().includes(search.toLowerCase());
+                  : exam.title.toLowerCase().includes(search.toLowerCase()) ||
+                       exam.code.toLowerCase().includes(search.toLowerCase());
             });
             return (
                <Fragment key={date}>
@@ -67,11 +65,11 @@ const Table = () => {
                                     (exam: Exam, index: number) => {
                                        return (
                                           <tr key={index}>
-                                             <td key={exam.course}>
-                                                {exam.course}
+                                             <td key={exam.code}>
+                                                {exam.code}
                                              </td>
-                                             <td key={exam.description}>
-                                                {exam.description}
+                                             <td key={exam.title}>
+                                                {exam.title}
                                              </td>
                                              <td key={exam.time}>
                                                 {exam.time}
@@ -106,7 +104,7 @@ const Table = () => {
       <>
          <div className="w-100 mb-8">
             <Searchbar
-               placeholder="Search by course name or code"
+               placeholder="Search by code name or code"
                onChange={handleChange}
                value={search}
             />

@@ -5,9 +5,9 @@ import supabase from "../utils/supabaseClient";
 import { useParams } from "react-router-dom";
 
 type Course = {
-   course: string;
+   code: string;
    date: string;
-   description: string;
+   title: string;
    hours: string;
    location: string;
    room: string;
@@ -97,11 +97,9 @@ const ScheduleDetails = () => {
                                  </thead>
                                  <tbody>
                                     <tr key={index}>
-                                       <td key={course.course}>
-                                          {course.course}
-                                       </td>
-                                       <td key={course.description}>
-                                          {course.description}
+                                       <td key={course.code}>{course.code}</td>
+                                       <td key={course.title}>
+                                          {course.title}
                                        </td>
                                        <td key={course.time}>{course.time}</td>
                                        <td key={course.hours}>

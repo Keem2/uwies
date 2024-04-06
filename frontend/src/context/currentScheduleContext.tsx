@@ -9,9 +9,9 @@ interface ScheduleContext {
       name: string;
       id: string;
       courses: {
-         course: string;
+         code: string;
          date: string;
-         description: string;
+         title: string;
          hours: string;
          location: string;
          room: string;

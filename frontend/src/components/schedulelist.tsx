@@ -6,7 +6,7 @@ import { CurrentScheduleContext } from "../context/currentScheduleContext";
 
 //type for schedule information
 type ScheduleCard = {
-   courses: { course: string; description: string }[] | null;
+   courses: { code: string; title: string }[] | null;
    id: string;
    name: string | null;
    created_at: string;
@@ -143,11 +143,10 @@ const ScheduleList = () => {
                                     <ul className="pt-3 text-base break-words text-gray-500 dark:text-gray-400 list-none">
                                        {schedule.courses?.map((courses) => (
                                           <li
-                                             key={courses.description}
+                                             key={courses.title}
                                              className="mb-3"
                                           >
-                                             {courses.course} -{" "}
-                                             {courses.description}
+                                             {courses.code} - {courses.title}
                                           </li>
                                        ))}
                                     </ul>
