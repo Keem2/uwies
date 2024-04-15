@@ -12,10 +12,6 @@ exam_data.dropna(inplace=True)
 # converting time to string, then changing from am to pm
 exam_data['time'] = exam_data['time'].astype(str)
 
-exam_data.loc[exam_data['time'] == '1:00 am','time'] = '1:00 pm'
-exam_data.loc[exam_data['time'] == '2:00 am','time'] = '2:00 pm'
-exam_data.loc[exam_data['time'] == '4:00 am','time'] = '4:00 pm'
-
 # changing HRS to hours
 exam_data["hours"] = exam_data["hours"].str.replace('HRS', 'hours')
     
