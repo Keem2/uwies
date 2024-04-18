@@ -2,7 +2,7 @@ type Props = {
    placeholder: string;
    value?: string;
    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-   disabled: boolean;
+   disabled?: boolean;
 };
 
 const Searchbar = ({ placeholder, onChange, disabled }: Props) => {

@@ -1,53 +1,77 @@
 import FormWrapper from "./formWrapper";
-import courses from "../../data/courselist";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import Searchbar from "../ui/searchbar";
+import supabase from "../../utils/supabaseClient";
+import { Dispatch } from "react";
 
 type Course = {
    code: string;
    title: string;
-   time: string;
-   hours: string;
-   location: string;
-   room: string;
-   date: string;
 };
 
 type ScheduleData = {
-   chosenCourses: {
-      code: string;
-      title: string;
-      time: string;
-      hours: string;
-      location: string;
-      room: string;
-      date: string;
-   }[];
+   chosenCourses: string[];
 };
 
 //ScheduleData & makes this combiine the ScheduleData type and this type
 type CourseSelectionFormProps = ScheduleData & {
    isEmpty: boolean;
    updateFields: (fields: Partial<ScheduleData>) => void;
+   setIsDisabled: Dispatch<SetStateAction<boolean>>;
 };
 
 const CourseSelectionForm = ({
    chosenCourses,
    isEmpty,
    updateFields,
+   setIsDisabled,
 }: CourseSelectionFormProps) => {
    const [search, setSearch] = useState("");
-
-   const [courseSelection, setCourseSelection] = useState(chosenCourses);
+   const [courses, setCourses] = useState<any>([]);
+   const [gotCourses, setGotCourses] = useState(false);
+   //course selection when user clicks add
+   const [courseSelection, setCourseSelection] = useState<Course[]>([]);
+   //array of course codes to be uploaded to supabase
+   const [uploadSelection, setUploadSelection] = useState(chosenCourses);
 
    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setSearch(event.target.value);
    };
 
+   const getCourses = async () => {
+      setIsDisabled(true);
+      let { data: exams, error } = await supabase
+         .from("exams")
+         .select("code,title");
+
+      if (exams) {
+         let courseListSorted = exams.sort((a, b) => {
+            if (a.code < b.code) {
+               return -1;
+            }
+            if (a.code > b.code) {
+               return 1;
+            }
+            return 0;
+         });
+         setCourses(courseListSorted);
+         setGotCourses(true);
+         setIsDisabled(false);
+      }
+
+      if (error) {
+      }
+   };
+
+   //load courses from supabase DB every time hasLoaded changes
+   useEffect(() => {
+      getCourses();
+   }, [gotCourses]);
+
    //updates chosenCourses when state form is updated
    useEffect(() => {
       updateFields({
-         chosenCourses: [...courseSelection],
+         chosenCourses: [...uploadSelection],
       });
    }, [courseSelection]);
 
@@ -80,84 +104,94 @@ const CourseSelectionForm = ({
                <span>Your schedule must have a code in it.</span>
             </div>
          )}
-         <div className="w-100 mb-8">
-            <Searchbar
-               placeholder="Search by code name or code"
-               onChange={handleChange}
-               value={search}
-            />
-         </div>
-         <div className="overflow-x-auto h-48">
-            <table
-               className="table table-sm 
+         {gotCourses === false ? (
+            <div className="flex flex-col items-center mb-10 text-black dark:text-white">
+               <p className="mb-3 font-semibold text-lg">
+                  Getting course list...
+               </p>
+               <span className="loading loading-dots loading-lg"></span>
+            </div>
+         ) : (
+            <>
+               <div className="w-100 mb-8">
+                  <Searchbar
+                     placeholder="Search by code name or code"
+                     onChange={handleChange}
+                     value={search}
+                  />
+               </div>
+               <div className="overflow-x-auto h-48">
+                  <table
+                     className="table table-sm 
        md:table-md dark:text-white text-black table-pin-cols"
-            >
-               <thead>
-                  <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
-                     <td>Course Code</td>
-                     <td>Course Name</td>
-                     <th className="bg-slate-100 dark:bg-gray-800"></th>
-                  </tr>
-               </thead>
-               <tbody>
-                  {courses
-                     .filter((code: Course) => {
-                        return search.toLowerCase() === ""
-                           ? code
-                           : code.title
-                                .toLowerCase()
-                                .includes(search.toLowerCase()) ||
-                                code.code
-                                   .toLowerCase()
-                                   .includes(search.toLowerCase());
-                     })
-                     .map((exam: Course, index: number) => (
-                        <tr key={index}>
-                           <td>{exam.code}</td>
-                           <td>{exam.title}</td>
-                           <th className="bg-slate-50 dark:bg-gray-900">
-                              <div className="flex justify-center">
-                                 {/**If code has been added to courseSelection state array, change from add button to added */}
-                                 {courseSelection.filter(
-                                    (code) => code.title === exam.title
-                                 ).length > 0 ? (
-                                    <p className="border border-black dark:border-white p-2 rounded-md">
-                                       Added
-                                    </p>
-                                 ) : (
-                                    <button
-                                       type="button"
-                                       className="btn w-16
+                  >
+                     <thead>
+                        <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
+                           <td>Course Code</td>
+                           <td>Course Name</td>
+                           <th className="bg-slate-100 dark:bg-gray-800"></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {courses
+                           .filter((code: Course) => {
+                              return search.toLowerCase() === ""
+                                 ? code
+                                 : code.title
+                                      .toLowerCase()
+                                      .includes(search.toLowerCase()) ||
+                                      code.code
+                                         .toLowerCase()
+                                         .includes(search.toLowerCase());
+                           })
+                           .map((exam: Course, index: number) => (
+                              <tr key={index}>
+                                 <td>{exam.code}</td>
+                                 <td>{exam.title}</td>
+                                 <th className="bg-slate-50 dark:bg-gray-900">
+                                    <div className="flex justify-center">
+                                       {/**If code has been added to courseSelection state array, change from add button to added */}
+                                       {courseSelection!.filter(
+                                          (code) => code.title === exam.title
+                                       ).length > 0 ? (
+                                          <p className="border border-black dark:border-white p-2 rounded-md">
+                                             Added
+                                          </p>
+                                       ) : (
+                                          <button
+                                             type="button"
+                                             className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                       onClick={() => {
-                                          setCourseSelection([
-                                             ...courseSelection,
-                                             {
-                                                code: exam.code,
-                                                title: exam.title,
-                                                time: exam.time,
-                                                hours: exam.hours,
-                                                location: exam.location,
-                                                room: exam.room,
-                                                date: exam.date,
-                                             },
-                                          ]);
-                                       }}
-                                    >
-                                       Add
-                                    </button>
-                                 )}
-                              </div>
-                           </th>
-                        </tr>
-                     ))}
-               </tbody>
-            </table>
-         </div>
+                                             onClick={() => {
+                                                setCourseSelection([
+                                                   ...courseSelection,
+                                                   {
+                                                      code: exam.code,
+                                                      title: exam.title,
+                                                   },
+                                                ]);
+                                                setUploadSelection([
+                                                   ...uploadSelection,
+                                                   exam.code,
+                                                ]);
+                                             }}
+                                          >
+                                             Add
+                                          </button>
+                                       )}
+                                    </div>
+                                 </th>
+                              </tr>
+                           ))}
+                     </tbody>
+                  </table>
+               </div>
+            </>
+         )}
 
          {/**Course Selection Table  */}
-         {chosenCourses.length === 0 ? (
+         {courseSelection.length === 0 ? (
             <p className="text-slate-500 dark:text-slate-300 italic text-center mt-20 text-md">
                Courses you add will appear here!
             </p>
@@ -175,49 +209,49 @@ const CourseSelectionForm = ({
                         <tr className="bg-slate-100 dark:bg-gray-800 text-xs text-gray-600 md:text-base dark:text-white">
                            <td>Course Code</td>
                            <td>Course Name</td>
-                           <td>Time</td>
-                           <td>Length</td>
-                           <td>Location</td>
-                           <td>Room</td>
-                           <td>Date</td>
                            <th className="bg-slate-100 dark:bg-gray-800"></th>
                         </tr>
                      </thead>
                      <tbody>
-                        {courseSelection.map((code: Course, index: number) => {
-                           return (
-                              <tr key={index}>
-                                 <td>{code.code}</td>
-                                 <td>{code.title}</td>
-                                 <td>{code.time}</td>
-                                 <td>{code.hours}</td>
-                                 <td>{code.location}</td>
-                                 <td>{code.room}</td>
-                                 <td>{code.date}</td>
-                                 <th className="bg-slate-50 dark:bg-gray-900">
-                                    <div className="flex justify-center">
-                                       <button
-                                          type="button"
-                                          className="btn w-16
+                        {courseSelection.map(
+                           (course: Course, index: number) => {
+                              return (
+                                 <tr key={index}>
+                                    <td>{course.code}</td>
+                                    <td>{course.title}</td>
+
+                                    <th className="bg-slate-50 dark:bg-gray-900">
+                                       <div className="flex justify-center">
+                                          <button
+                                             type="button"
+                                             className="btn w-16
                                     md:w-18
                           bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
-                                          onClick={() => {
-                                             //Remove from courseSelection array
-                                             setCourseSelection(
-                                                courseSelection.filter(
-                                                   (exam) =>
-                                                      exam.title !== code.title
-                                                )
-                                             );
-                                          }}
-                                       >
-                                          Remove
-                                       </button>
-                                    </div>
-                                 </th>
-                              </tr>
-                           );
-                        })}
+                                             onClick={() => {
+                                                //Remove from courseSelection array
+                                                setCourseSelection(
+                                                   courseSelection.filter(
+                                                      (exam) =>
+                                                         exam.title !==
+                                                         course.title
+                                                   )
+                                                );
+                                                setUploadSelection(
+                                                   uploadSelection.filter(
+                                                      (exam) =>
+                                                         exam !== course.code
+                                                   )
+                                                );
+                                             }}
+                                          >
+                                             Remove
+                                          </button>
+                                       </div>
+                                    </th>
+                                 </tr>
+                              );
+                           }
+                        )}
                      </tbody>
                   </table>
                </div>

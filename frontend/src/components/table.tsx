@@ -6,7 +6,7 @@ import React from "react";
 import supabase from "../utils/supabaseClient";
 
 type Exam = {
-   date: string | any;
+   date: string;
    code: string;
    title: string;
    time: string;
@@ -52,6 +52,16 @@ const Table = () => {
    useEffect(() => {
       getTableData();
    }, [hasLoaded]);
+
+   //hide error toast after 5 seconds
+   useEffect(() => {
+      const timer = setTimeout(function () {
+         setLoadingError(false);
+      }, 5000);
+      return () => {
+         clearTimeout(timer);
+      };
+   }, [loadingError]);
 
    //Table data returned
    return (

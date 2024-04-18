@@ -11,15 +11,7 @@ import FormError from "./formError";
 
 type FormData = {
    scheduleName: string;
-   chosenCourses: {
-      code: string;
-      title: string;
-      time: string;
-      hours: string;
-      location: string;
-      room: string;
-      date: string;
-   }[];
+   chosenCourses: string[];
 };
 //initial form data
 const INITIAL_FORM_DATA: FormData = {
@@ -36,6 +28,8 @@ const MultiStepForm = () => {
       name: false,
       courseList: false,
    });
+   //used rto disabled button while courses are being fetched
+   const [isDisabled, setIsDisabled] = useState(false);
 
    //isLoading state for create button
    const [isLoading, setIsLoading] = useState(false);
@@ -68,6 +62,7 @@ const MultiStepForm = () => {
          {...data}
          updateFields={updateFields}
          isEmpty={isEmpty.courseList}
+         setIsDisabled={setIsDisabled}
       />,
       <ScheduleCreated />,
       <FormError />,
@@ -99,7 +94,7 @@ const MultiStepForm = () => {
    const createSchedule = async () => {
       setIsLoading(true);
       const { error } = await supabase
-         .from("schedule")
+         .from("test")
          .insert([
             {
                userid: session?.user.id,
@@ -148,7 +143,8 @@ const MultiStepForm = () => {
                      ) : (
                         <button
                            type="submit"
-                           className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300"
+                           className="btn w-24 mb-12 bg-black dark:bg-slate-100 text-white dark:text-black hover:bg-neutral-600 dark:hover:bg-slate-300 disabled:bg-neutral-400"
+                           disabled={isDisabled}
                         >
                            {isLastStep ? "Create" : "Next"}
                         </button>
