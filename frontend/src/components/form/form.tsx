@@ -93,23 +93,24 @@ const MultiStepForm = () => {
    //function to insert schedule details to database
    const createSchedule = async () => {
       setIsLoading(true);
-      const { error } = await supabase
-         .from("test")
-         .insert([
-            {
+      let uuid = self.crypto.randomUUID();
+      data.chosenCourses.forEach(async (course) => {
+         const { error } = await supabase
+            .from("test")
+            .insert({
+               id: uuid,
                userid: session?.user.id,
                name: data.scheduleName,
-               courses: data.chosenCourses,
-            },
-         ])
-         .single();
-      if (error) {
-         setIsLoading(false);
-         goToStep(3);
-      } else {
-         setIsLoading(false);
-         goToStep(2);
-      }
+               course: course,
+            })
+            .single();
+         if (error) {
+            goToStep(3);
+            return false;
+         } else {
+            goToStep(2);
+         }
+      });
    };
 
    return (
