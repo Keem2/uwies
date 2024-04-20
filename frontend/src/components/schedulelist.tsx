@@ -53,7 +53,7 @@ const ScheduleList = () => {
    useEffect(() => {
       const timer = setTimeout(function () {
          setIsDeleteError(false);
-      }, 3000);
+      }, 5000);
       return () => {
          clearTimeout(timer);
       };
@@ -83,7 +83,9 @@ const ScheduleList = () => {
                   {isDeleteError && (
                      <div className="toast z-10">
                         <div className="alert alert-error">
-                           <span>An error occurred. Please try again.</span>
+                           <span>
+                              Unable to delete schedule. Please try again.
+                           </span>
                         </div>
                      </div>
                   )}

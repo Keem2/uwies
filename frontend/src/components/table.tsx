@@ -53,21 +53,11 @@ const Table = () => {
       getTableData();
    }, [hasLoaded]);
 
-   //hide error toast after 5 seconds
-   useEffect(() => {
-      const timer = setTimeout(function () {
-         setLoadingError(false);
-      }, 5000);
-      return () => {
-         clearTimeout(timer);
-      };
-   }, [loadingError]);
-
    //Table data returned
    return (
       <>
          {loadingError && (
-            <div className="toast z-20">
+            <div className="toast z-20 md:mr-4">
                <div className="alert alert-error">
                   <span>The exam list could not be loaded.</span>
                </div>
@@ -84,10 +74,16 @@ const Table = () => {
          </div>
          {hasLoaded === false ? (
             <div className="flex flex-col items-center mb-10">
-               <p className="mb-3 font-semibold text-lg">
-                  Loading exam list...
-               </p>
-               <span className="loading loading-dots loading-lg"></span>
+               {loadingError ? (
+                  <p className="mb-3 font-semibold text-lg">No exam data.</p>
+               ) : (
+                  <>
+                     <p className="mb-3 font-semibold text-lg">
+                        Loading exam list...
+                     </p>
+                     <span className="loading loading-dots loading-lg"></span>
+                  </>
+               )}
             </div>
          ) : (
             <>
