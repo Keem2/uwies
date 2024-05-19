@@ -13,7 +13,11 @@ const ThemeSwitcher = () => {
    }, [theme]);
 
    return (
-      <>
+      <button
+         onClick={() =>
+            theme === "light" ? setTheme("dark") : setTheme("light")
+         }
+      >
          {/** Toggle Switch from daisyui */}
          <label
             className="flex cursor-pointer gap-2"
@@ -39,10 +43,6 @@ const ThemeSwitcher = () => {
                type="checkbox"
                className="toggle theme-controller"
                checked={theme === "light" ? false : true}
-               onClick={() =>
-                  theme === "light" ? setTheme("dark") : setTheme("light")
-               }
-               readOnly
             />
             {/** Moon Icon */}
             <svg
@@ -59,7 +59,7 @@ const ThemeSwitcher = () => {
                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
          </label>
-      </>
+      </button>
    );
 };
 

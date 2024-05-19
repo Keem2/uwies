@@ -125,14 +125,15 @@ const MenuDropdown = () => {
                      tabIndex={0}
                      className="dropdown-content z-[1] menu p-2 shadow bg-slate-100 rounded-box w-60 dark:bg-gray-800"
                   >
-                     <li
-                        onClick={() => {
-                           handleLinkClick();
-                           setIsLoggingIn(true);
-                           googleSignIn();
-                        }}
-                     >
-                        <button className="text-sm">
+                     <li>
+                        <button
+                           onClick={() => {
+                              handleLinkClick();
+                              setIsLoggingIn(true);
+                              googleSignIn();
+                           }}
+                           className="text-sm"
+                        >
                            <img
                               src={GoogleIcon}
                               alt="Google Icon"
@@ -223,15 +224,15 @@ const MenuDropdown = () => {
                         Schedules
                      </NavLink>
                   </li>
-                  <li
-                     onClick={() => {
-                        handleLinkClick();
-                        setIsLoggingOut(true);
-                        signOutUser();
-                     }}
-                     className="dark:hover:bg-gray-700 rounded-lg dark:text-white"
-                  >
-                     <button className="text-sm">
+                  <li className="dark:hover:bg-gray-700 rounded-lg dark:text-white">
+                     <button
+                        className="text-sm"
+                        onClick={() => {
+                           handleLinkClick();
+                           setIsLoggingOut(true);
+                           signOutUser();
+                        }}
+                     >
                         <svg
                            xmlns="http://www.w3.org/2000/svg"
                            fill="none"
