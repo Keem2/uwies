@@ -72,10 +72,18 @@ const ScheduleDetails = () => {
             <div className="ml-4 md:ml-1 mb-8">
                {Object.keys(scheduleList).map((date) => {
                   let results = scheduleList[date];
+                  // changing date format to long date for client
+                  let dateSplit = date.split("/").map(Number);
+                  let newDate = new Date(
+                     Date.UTC(dateSplit[2], dateSplit[1] - 1, dateSplit[0] + 1)
+                  );
+                  let formattedDate = new Intl.DateTimeFormat("en-GB", {
+                     dateStyle: "long",
+                  }).format(newDate);
                   return (
                      <Fragment key={date}>
                         <p className="dark:text-white text-black font-semibold text-base md:text-lg bg-slate-50 py-2 dark:bg-gray-900 z-10">
-                           {date}
+                           {formattedDate}
                         </p>
                         <div className="overflow-x-auto">
                            <table

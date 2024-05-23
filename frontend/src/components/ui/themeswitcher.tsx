@@ -43,6 +43,7 @@ const ThemeSwitcher = () => {
                type="checkbox"
                className="toggle theme-controller"
                checked={theme === "light" ? false : true}
+               readOnly
             />
             {/** Moon Icon */}
             <svg

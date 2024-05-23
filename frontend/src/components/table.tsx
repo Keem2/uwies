@@ -24,6 +24,15 @@ const Table = () => {
    const tabledata = (
       <>
          {Object.keys(result).map((date) => {
+            // changing date format to long date for client
+            let dateSplit = date.split("/").map(Number);
+            let newDate = new Date(
+               Date.UTC(dateSplit[2], dateSplit[1] - 1, dateSplit[0] + 1)
+            );
+            let formattedDate = new Intl.DateTimeFormat("en-GB", {
+               dateStyle: "long",
+            }).format(newDate);
+
             {
                /**Variable filterResults stores returned exam info corresponding to user input into an array */
             }
@@ -42,7 +51,7 @@ const Table = () => {
                               "dark:text-white font-semibold text-base md:text-lg sticky -top-4 bg-slate-50 py-2 dark:bg-gray-900 z-10"
                            }
                         >
-                           {date}
+                           {formattedDate}
                         </p>
                         <div className="overflow-x-auto">
                            <table
