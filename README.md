@@ -4,7 +4,7 @@ This is the source code for The University of the West Indies (Cave Hill) Exam S
 ## Project Data
 The university releases a PDF file of the list of exams. This PDF is imported into an Excel file and the data is initially cleaned enough for the exam data to be formatted as CSV. This inital CSV file is in the **data-initial** folder.
 
-The data is then cleaned further using Python (script.py) in the **data-clean** folder. This script also makes the final version of the CSV file and a JSON file. This JSON file is what is consumed by the application, present in the **data/** section of the **frontend** folder. 
+The data is then cleaned further using Python (script.py) in the **data-clean** folder. This script also makes the final version of the CSV file and a JSON file. This JSON file contains the exam data consumed by the application, present in the **data/** section of the **frontend** folder. 
 
 ## Features
 - **User Authentication** - User is logged in via Google OAuth, provided by Supabase.
